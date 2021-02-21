@@ -1,0 +1,299 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16LF872 ]
+[d frameptr 6 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\itoa.c
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+"17
+[v _utoa utoa `(*.4uc  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"63 C:\Users\LENOVO\MPLABXProjects\Func_gen.X\newmain.c
+[v _spi_write spi_write `(v  1 e 1 0 ]
+"85
+[v _DDS DDS `(v  1 e 1 0 ]
+"106
+[v _DDS_init DDS_init `(v  1 e 1 0 ]
+"115
+[v _data_write data_write `(v  1 e 1 0 ]
+"125
+[v _lcd_data lcd_data `(v  1 e 1 0 ]
+"135
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+"145
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"187
+[v _lcd_clear lcd_clear `(v  1 e 1 0 ]
+"193
+[v _send_string send_string `(v  1 e 1 0 ]
+"200
+[v _send_int send_int `(v  1 e 1 0 ]
+"206
+[v _ISR ISR `II(v  1 e 1 0 ]
+"256
+[v _main main `(v  1 e 1 0 ]
+"216 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16lf872.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"1788
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"1812
+[v _INTE INTE `VEb  1 e 0 @92 ]
+"1815
+[v _INTEDG INTEDG `VEb  1 e 0 @1038 ]
+"1818
+[v _INTF INTF `VEb  1 e 0 @89 ]
+"1836
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"1875
+[v _RB1 RB1 `VEb  1 e 0 @49 ]
+"1878
+[v _RB2 RB2 `VEb  1 e 0 @50 ]
+"1881
+[v _RB3 RB3 `VEb  1 e 0 @51 ]
+"1884
+[v _RB4 RB4 `VEb  1 e 0 @52 ]
+"1887
+[v _RB5 RB5 `VEb  1 e 0 @53 ]
+"1908
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"1911
+[v _RC3 RC3 `VEb  1 e 0 @59 ]
+"1914
+[v _RC4 RC4 `VEb  1 e 0 @60 ]
+"1917
+[v _RC5 RC5 `VEb  1 e 0 @61 ]
+"1920
+[v _RC6 RC6 `VEb  1 e 0 @62 ]
+"1923
+[v _RC7 RC7 `VEb  1 e 0 @63 ]
+"2070
+[v _TRISB0 TRISB0 `VEb  1 e 0 @1072 ]
+"2073
+[v _TRISB1 TRISB1 `VEb  1 e 0 @1073 ]
+"2076
+[v _TRISB2 TRISB2 `VEb  1 e 0 @1074 ]
+"2079
+[v _TRISB3 TRISB3 `VEb  1 e 0 @1075 ]
+"2082
+[v _TRISB4 TRISB4 `VEb  1 e 0 @1076 ]
+"2085
+[v _TRISB5 TRISB5 `VEb  1 e 0 @1077 ]
+"2097
+[v _TRISC1 TRISC1 `VEb  1 e 0 @1081 ]
+"2100
+[v _TRISC2 TRISC2 `VEb  1 e 0 @1082 ]
+"2103
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2106
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2109
+[v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
+"2112
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2115
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"38 C:\Users\LENOVO\MPLABXProjects\Func_gen.X\newmain.c
+[v _freqMSB freqMSB `ui  1 e 2 0 ]
+"39
+[v _freqLSB freqLSB `ui  1 e 2 0 ]
+"40
+[v _RESET RESET `ui  1 e 2 0 ]
+"41
+[v _SET_0 SET_0 `ui  1 e 2 0 ]
+"42
+[v _SET_1 SET_1 `ui  1 e 2 0 ]
+"43
+[v _PHASE PHASE `ui  1 e 2 0 ]
+"54
+[v _freq freq `ul  1 e 4 0 ]
+[v _last_freq last_freq `ul  1 e 4 0 ]
+"55
+[v _val0 val0 `l  1 e 4 0 ]
+[v _val1 val1 `l  1 e 4 0 ]
+"56
+[v _val2 val2 `c  1 e 1 0 ]
+[v _val3 val3 `c  1 e 1 0 ]
+[v _val4 val4 `c  1 e 1 0 ]
+[v _pos pos `c  1 e 1 0 ]
+"57
+[v _last_val0 last_val0 `c  1 e 1 0 ]
+[v _last_val1 last_val1 `c  1 e 1 0 ]
+[v _last_val2 last_val2 `c  1 e 1 0 ]
+[v _last_val3 last_val3 `c  1 e 1 0 ]
+[v _last_val4 last_val4 `c  1 e 1 0 ]
+"58
+[v _buff buff `[8]uc  1 e 8 0 ]
+"59
+[v _F_FREQ F_FREQ `uc  1 e 1 0 ]
+"60
+[v _cursor_dir cursor_dir `uc  1 e 1 0 ]
+"256
+[v _main main `(v  1 e 1 0 ]
+{
+"390
+} 0
+"200
+[v _send_int send_int `(v  1 e 1 0 ]
+{
+[v send_int@data data `i  1 p 2 16 ]
+"203
+} 0
+"193
+[v _send_string send_string `(v  1 e 1 0 ]
+{
+"195
+[v send_string@i i `ui  1 a 2 9 ]
+"193
+[v send_string@s s `*.26DCuc  1 p 2 7 ]
+"197
+} 0
+"125
+[v _lcd_data lcd_data `(v  1 e 1 0 ]
+{
+[v lcd_data@data data `uc  1 a 1 wreg ]
+[v lcd_data@data data `uc  1 a 1 wreg ]
+"127
+[v lcd_data@data data `uc  1 a 1 6 ]
+"132
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\itoa.c
+[v _itoa itoa `(*.4uc  1 e 1 0 ]
+{
+[v itoa@buf buf `*.4uc  1 a 1 wreg ]
+"6
+[v itoa@cp cp `*.4uc  1 a 1 14 ]
+"4
+[v itoa@buf buf `*.4uc  1 a 1 wreg ]
+[v itoa@val val `i  1 p 2 9 ]
+[v itoa@base base `i  1 p 2 11 ]
+"6
+[v itoa@buf buf `*.4uc  1 a 1 15 ]
+"14
+} 0
+"17
+[v _utoa utoa `(*.4uc  1 e 1 0 ]
+{
+[v utoa@buf buf `*.4uc  1 a 1 wreg ]
+"19
+[v utoa@v v `ui  1 a 2 5 ]
+"20
+[v utoa@c c `uc  1 a 1 7 ]
+"17
+[v utoa@buf buf `*.4uc  1 a 1 wreg ]
+[v utoa@val val `ui  1 p 2 0 ]
+[v utoa@base base `i  1 p 2 2 ]
+"22
+[v utoa@buf buf `*.4uc  1 a 1 8 ]
+"37
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 8 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 3 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 5 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 8 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 10 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 3 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
+"30
+} 0
+"145 C:\Users\LENOVO\MPLABXProjects\Func_gen.X\newmain.c
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+{
+"184
+} 0
+"187
+[v _lcd_clear lcd_clear `(v  1 e 1 0 ]
+{
+"190
+} 0
+"135
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+{
+[v lcd_cmd@data data `uc  1 a 1 wreg ]
+[v lcd_cmd@data data `uc  1 a 1 wreg ]
+"137
+[v lcd_cmd@data data `uc  1 a 1 6 ]
+"142
+} 0
+"115
+[v _data_write data_write `(v  1 e 1 0 ]
+{
+[v data_write@data data `uc  1 a 1 wreg ]
+[v data_write@data data `uc  1 a 1 wreg ]
+"117
+[v data_write@data data `uc  1 a 1 4 ]
+"122
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 7 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 3 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 5 ]
+"53
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 1 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 3 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 7 ]
+"129
+} 0
+"106 C:\Users\LENOVO\MPLABXProjects\Func_gen.X\newmain.c
+[v _DDS_init DDS_init `(v  1 e 1 0 ]
+{
+"112
+} 0
+"85
+[v _DDS DDS `(v  1 e 1 0 ]
+{
+[v DDS@input input `ul  1 p 4 0 ]
+[v DDS@reg reg `uc  1 p 1 4 ]
+"104
+} 0
+"63
+[v _spi_write spi_write `(v  1 e 1 0 ]
+{
+"66
+[v spi_write@i i `uc  1 a 1 6 ]
+"63
+[v spi_write@data data `ui  1 p 2 3 ]
+"80
+} 0
+"206
+[v _ISR ISR `II(v  1 e 1 0 ]
+{
+"254
+} 0

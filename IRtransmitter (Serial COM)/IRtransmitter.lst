@@ -1,0 +1,2681 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.70 build 5239 
+                                                                                               Thu May 21 15:56:57 2015
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 5239
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 5239"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 5 "C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 5 "C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+    45  2007  3F32               	dw 0x3F32 ;#
+    46                           ;COMMON:	_main->_UART_Init
+    47                           ;COMMON:	_UART_Init->___aldiv
+    48                           ;BANK0:	_UART_Init->___aldiv
+    49                           ;BANK0:	_main->_UART_Init
+    50                           ;COMMON:	_UART_Init->___aldiv
+    51                           ;BANK0:	_UART_Init->___aldiv
+    52                           	FNCALL	_main,_UART_Init
+    53                           	FNCALL	_main,_UART_Write
+    54                           	FNCALL	_main,_UART_Stop
+    55                           	FNCALL	_UART_Init,___aldiv
+    56                           	FNROOT	_main
+    57                           	global	_delayus_variable
+    58                           	global	_ADCON0
+    59                           psect	text41,local,class=CODE,delta=2
+    60                           global __ptext41
+    61  0003                     __ptext41:
+    62  001F                     _ADCON0  equ     31
+    63                           	global	_ADRESH
+    64  001E                     _ADRESH  equ     30
+    65                           	global	_CCP1CON
+    66  0017                     _CCP1CON  equ     23
+    67                           	global	_CCP2CON
+    68  001D                     _CCP2CON  equ     29
+    69                           	global	_CCPR1H
+    70  0016                     _CCPR1H  equ     22
+    71                           	global	_CCPR1L
+    72  0015                     _CCPR1L  equ     21
+    73                           	global	_CCPR2H
+    74  001C                     _CCPR2H  equ     28
+    75                           	global	_CCPR2L
+    76  001B                     _CCPR2L  equ     27
+    77                           	global	_FSR
+    78  0004                     _FSR  equ     4
+    79                           	global	_INDF
+    80  0000                     _INDF  equ     0
+    81                           	global	_INTCON
+    82  000B                     _INTCON  equ     11
+    83                           	global	_PCL
+    84  0002                     _PCL  equ     2
+    85                           	global	_PCLATH
+    86  000A                     _PCLATH  equ     10
+    87                           	global	_PIR1
+    88  000C                     _PIR1  equ     12
+    89                           	global	_PIR2
+    90  000D                     _PIR2  equ     13
+    91                           	global	_PORTA
+    92  0005                     _PORTA  equ     5
+    93                           	global	_PORTB
+    94  0006                     _PORTB  equ     6
+    95                           	global	_PORTC
+    96  0007                     _PORTC  equ     7
+    97                           	global	_PORTD
+    98  0008                     _PORTD  equ     8
+    99                           	global	_PORTE
+   100  0009                     _PORTE  equ     9
+   101                           	global	_RCREG
+   102  001A                     _RCREG  equ     26
+   103                           	global	_RCSTA
+   104  0018                     _RCSTA  equ     24
+   105                           	global	_SSPBUF
+   106  0013                     _SSPBUF  equ     19
+   107                           	global	_SSPCON
+   108  0014                     _SSPCON  equ     20
+   109                           	global	_STATUS
+   110  0003                     _STATUS  equ     3
+   111                           	global	_T1CON
+   112  0010                     _T1CON  equ     16
+   113                           	global	_T2CON
+   114  0012                     _T2CON  equ     18
+   115                           	global	_TMR0
+   116  0001                     _TMR0  equ     1
+   117                           	global	_TMR1H
+   118  000F                     _TMR1H  equ     15
+   119                           	global	_TMR1L
+   120  000E                     _TMR1L  equ     14
+   121                           	global	_TMR2
+   122  0011                     _TMR2  equ     17
+   123                           	global	_TXREG
+   124  0019                     _TXREG  equ     25
+   125                           	global	_ADCS0
+   126  00FE                     _ADCS0  equ     254
+   127                           	global	_ADCS1
+   128  00FF                     _ADCS1  equ     255
+   129                           	global	_ADDEN
+   130  00C3                     _ADDEN  equ     195
+   131                           	global	_ADGO
+   132  00FA                     _ADGO  equ     250
+   133                           	global	_ADIF
+   134  0066                     _ADIF  equ     102
+   135                           	global	_ADON
+   136  00F8                     _ADON  equ     248
+   137                           	global	_BCLIF
+   138  006B                     _BCLIF  equ     107
+   139                           	global	_CARRY
+   140  0018                     _CARRY  equ     24
+   141                           	global	_CCP1IF
+   142  0062                     _CCP1IF  equ     98
+   143                           	global	_CCP1M0
+   144  00B8                     _CCP1M0  equ     184
+   145                           	global	_CCP1M1
+   146  00B9                     _CCP1M1  equ     185
+   147                           	global	_CCP1M2
+   148  00BA                     _CCP1M2  equ     186
+   149                           	global	_CCP1M3
+   150  00BB                     _CCP1M3  equ     187
+   151                           	global	_CCP1X
+   152  00BD                     _CCP1X  equ     189
+   153                           	global	_CCP1Y
+   154  00BC                     _CCP1Y  equ     188
+   155                           	global	_CCP2IF
+   156  0068                     _CCP2IF  equ     104
+   157                           	global	_CCP2M0
+   158  00E8                     _CCP2M0  equ     232
+   159                           	global	_CCP2M1
+   160  00E9                     _CCP2M1  equ     233
+   161                           	global	_CCP2M2
+   162  00EA                     _CCP2M2  equ     234
+   163                           	global	_CCP2M3
+   164  00EB                     _CCP2M3  equ     235
+   165                           	global	_CCP2X
+   166  00ED                     _CCP2X  equ     237
+   167                           	global	_CCP2Y
+   168  00EC                     _CCP2Y  equ     236
+   169                           	global	_CHS0
+   170  00FB                     _CHS0  equ     251
+   171                           	global	_CHS1
+   172  00FC                     _CHS1  equ     252
+   173                           	global	_CHS2
+   174  00FD                     _CHS2  equ     253
+   175                           	global	_CKP
+   176  00A4                     _CKP  equ     164
+   177                           	global	_CMIF
+   178  006E                     _CMIF  equ     110
+   179                           	global	_CREN
+   180  00C4                     _CREN  equ     196
+   181                           	global	_DC
+   182  0019                     _DC  equ     25
+   183                           	global	_EEIF
+   184  006C                     _EEIF  equ     108
+   185                           	global	_FERR
+   186  00C2                     _FERR  equ     194
+   187                           	global	_GIE
+   188  005F                     _GIE  equ     95
+   189                           	global	_GODONE
+   190  00FA                     _GODONE  equ     250
+   191                           	global	_INTE
+   192  005C                     _INTE  equ     92
+   193                           	global	_INTF
+   194  0059                     _INTF  equ     89
+   195                           	global	_IRP
+   196  001F                     _IRP  equ     31
+   197                           	global	_OERR
+   198  00C1                     _OERR  equ     193
+   199                           	global	_PD
+   200  001B                     _PD  equ     27
+   201                           	global	_PEIE
+   202  005E                     _PEIE  equ     94
+   203                           	global	_PSPIF
+   204  0067                     _PSPIF  equ     103
+   205                           	global	_RA0
+   206  0028                     _RA0  equ     40
+   207                           	global	_RA1
+   208  0029                     _RA1  equ     41
+   209                           	global	_RA2
+   210  002A                     _RA2  equ     42
+   211                           	global	_RA3
+   212  002B                     _RA3  equ     43
+   213                           	global	_RA4
+   214  002C                     _RA4  equ     44
+   215                           	global	_RA5
+   216  002D                     _RA5  equ     45
+   217                           	global	_RB0
+   218  0030                     _RB0  equ     48
+   219+                          	global	_RB1
+   220+ 0031                     _RB1  equ     49
+   221+                          	global	_RB2
+   222+ 0032                     _RB2  equ     50
+   223+                          	global	_RB3
+   224+ 0033                     _RB3  equ     51
+   225                           	global	_RB4
+   226  0034                     _RB4  equ     52
+   227+                          	global	_RB5
+   228+ 0035                     _RB5  equ     53
+   229+                          	global	_RB6
+   230+ 0036                     _RB6  equ     54
+   231+                          	global	_RB7
+   232+ 0037                     _RB7  equ     55
+   233+                          	global	_RBIE
+   234+ 005B                     _RBIE  equ     91
+   235+                          	global	_RBIF
+   236+ 0058                     _RBIF  equ     88
+   237                           	global	_RC0
+   238  0038                     _RC0  equ     56
+   239+                          	global	_RC1
+   240+ 0039                     _RC1  equ     57
+   241                           	global	_RC2
+   242  003A                     _RC2  equ     58
+   243+                          	global	_RC3
+   244+ 003B                     _RC3  equ     59
+   245+                          	global	_RC4
+   246+ 003C                     _RC4  equ     60
+   247+                          	global	_RC5
+   248+ 003D                     _RC5  equ     61
+   249+                          	global	_RC6
+   250+ 003E                     _RC6  equ     62
+   251+                          	global	_RC7
+   252+ 003F                     _RC7  equ     63
+   253                           	global	_RCIF
+   254  0065                     _RCIF  equ     101
+   255                           	global	_RD0
+   256  0040                     _RD0  equ     64
+   257+                          	global	_RD1
+   258+ 0041                     _RD1  equ     65
+   259+                          	global	_RD2
+   260+ 0042                     _RD2  equ     66
+   261                           	global	_RD3
+   262  0043                     _RD3  equ     67
+   263+                          	global	_RD4
+   264+ 0044                     _RD4  equ     68
+   265                           	global	_RD5
+   266  0045                     _RD5  equ     69
+   267+                          	global	_RD6
+   268+ 0046                     _RD6  equ     70
+   269                           	global	_RD7
+   270  0047                     _RD7  equ     71
+   271+                          	global	_RE0
+   272+ 0048                     _RE0  equ     72
+   273+                          	global	_RE1
+   274+ 0049                     _RE1  equ     73
+   275+                          	global	_RE2
+   276+ 004A                     _RE2  equ     74
+   277+                          	global	_RP0
+   278+ 001D                     _RP0  equ     29
+   279+                          	global	_RP1
+   280+ 001E                     _RP1  equ     30
+   281                           	global	_RX9
+   282  00C6                     _RX9  equ     198
+   283+                          	global	_RX9D
+   284+ 00C0                     _RX9D  equ     192
+   285+                          	global	_SPEN
+   286+ 00C7                     _SPEN  equ     199
+   287+                          	global	_SREN
+   288+ 00C5                     _SREN  equ     197
+   289+                          	global	_SSPEN
+   290+ 00A5                     _SSPEN  equ     165
+   291+                          	global	_SSPIF
+   292+ 0063                     _SSPIF  equ     99
+   293                           	global	_SSPM0
+   294  00A0                     _SSPM0  equ     160
+   295+                          	global	_SSPM1
+   296+ 00A1                     _SSPM1  equ     161
+   297                           	global	_SSPM2
+   298  00A2                     _SSPM2  equ     162
+   299+                          	global	_SSPM3
+   300+ 00A3                     _SSPM3  equ     163
+   301+                          	global	_SSPOV
+   302+ 00A6                     _SSPOV  equ     166
+   303+                          	global	_T0IE
+   304+ 005D                     _T0IE  equ     93
+   305+                          	global	_T0IF
+   306+ 005A                     _T0IF  equ     90
+   307+                          	global	_T1CKPS0
+   308+ 0084                     _T1CKPS0  equ     132
+   309                           	global	_T1CKPS1
+   310  0085                     _T1CKPS1  equ     133
+   311+                          	global	_T1OSCEN
+   312+ 0083                     _T1OSCEN  equ     131
+   313+                          	global	_T1SYNC
+   314+ 0082                     _T1SYNC  equ     130
+   315+                          	global	_T2CKPS0
+   316+ 0090                     _T2CKPS0  equ     144
+   317+                          	global	_T2CKPS1
+   318+ 0091                     _T2CKPS1  equ     145
+   319+                          	global	_TMR0IE
+   320+ 005D                     _TMR0IE  equ     93
+   321                           	global	_TMR0IF
+   322  005A                     _TMR0IF  equ     90
+   323+                          	global	_TMR1CS
+   324+ 0081                     _TMR1CS  equ     129
+   325                           	global	_TMR1IF
+   326  0060                     _TMR1IF  equ     96
+   327+                          	global	_TMR1ON
+   328+ 0080                     _TMR1ON  equ     128
+   329+                          	global	_TMR2IF
+   330+ 0061                     _TMR2IF  equ     97
+   331+                          	global	_TMR2ON
+   332+ 0092                     _TMR2ON  equ     146
+   333+                          	global	_TO
+   334+ 001C                     _TO  equ     28
+   335+                          	global	_TOUTPS0
+   336+ 0093                     _TOUTPS0  equ     147
+   337                           	global	_TOUTPS1
+   338  0094                     _TOUTPS1  equ     148
+   339                           	global	_TOUTPS2
+   340  0095                     _TOUTPS2  equ     149
+   341+                          	global	_TOUTPS3
+   342+ 0096                     _TOUTPS3  equ     150
+   343                           	global	_TXIF
+   344  0064                     _TXIF  equ     100
+   345                           	global	_WCOL
+   346  00A7                     _WCOL  equ     167
+   347+                          	global	_ZERO
+   348+ 001A                     _ZERO  equ     26
+   349                           	global	_ADCON1
+   350  009F                     _ADCON1  equ     159
+   351+                          	global	_ADRESL
+   352+ 009E                     _ADRESL  equ     158
+   353                           	global	_CMCON
+   354  009C                     _CMCON  equ     156
+   355+                          	global	_CVRCON
+   356+ 009D                     _CVRCON  equ     157
+   357+                          	global	_OPTION
+   358+ 0081                     _OPTION  equ     129
+   359+                          	global	_PCON
+   360+ 008E                     _PCON  equ     142
+   361+                          	global	_PIE1
+   362+ 008C                     _PIE1  equ     140
+   363+                          	global	_PIE2
+   364+ 008D                     _PIE2  equ     141
+   365                           	global	_PR2
+   366  0092                     _PR2  equ     146
+   367+                          	global	_SPBRG
+   368+ 0099                     _SPBRG  equ     153
+   369+                          	global	_SSPADD
+   370+ 0093                     _SSPADD  equ     147
+   371+                          	global	_SSPCON2
+   372+ 0091                     _SSPCON2  equ     145
+   373+                          	global	_SSPSTAT
+   374+ 0094                     _SSPSTAT  equ     148
+   375+                          	global	_TRISA
+   376+ 0085                     _TRISA  equ     133
+   377                           	global	_TRISB
+   378  0086                     _TRISB  equ     134
+   379+                          	global	_TRISC
+   380+ 0087                     _TRISC  equ     135
+   381                           	global	_TRISD
+   382  0088                     _TRISD  equ     136
+   383+                          	global	_TRISE
+   384+ 0089                     _TRISE  equ     137
+   385+                          	global	_TXSTA
+   386+ 0098                     _TXSTA  equ     152
+   387+                          	global	_ACKDT
+   388+ 048D                     _ACKDT  equ     1165
+   389+                          	global	_ACKEN
+   390+ 048C                     _ACKEN  equ     1164
+   391+                          	global	_ACKSTAT
+   392+ 048E                     _ACKSTAT  equ     1166
+   393                           	global	_ADCS2
+   394  04FE                     _ADCS2  equ     1278
+   395+                          	global	_ADFM
+   396+ 04FF                     _ADFM  equ     1279
+   397+                          	global	_ADIE
+   398+ 0466                     _ADIE  equ     1126
+   399+                          	global	_BCLIE
+   400+ 046B                     _BCLIE  equ     1131
+   401+                          	global	_BF
+   402+ 04A0                     _BF  equ     1184
+   403+                          	global	_BOR
+   404+ 0470                     _BOR  equ     1136
+   405                           	global	_BRGH
+   406  04C2                     _BRGH  equ     1218
+   407+                          	global	_C1INV
+   408+ 04E4                     _C1INV  equ     1252
+   409                           	global	_C1OUT
+   410  04E6                     _C1OUT  equ     1254
+   411+                          	global	_C2INV
+   412+ 04E5                     _C2INV  equ     1253
+   413+                          	global	_C2OUT
+   414+ 04E7                     _C2OUT  equ     1255
+   415+                          	global	_CCP1IE
+   416+ 0462                     _CCP1IE  equ     1122
+   417+                          	global	_CCP2IE
+   418+ 0468                     _CCP2IE  equ     1128
+   419                           	global	_CIS
+   420  04E3                     _CIS  equ     1251
+   421                           	global	_CKE
+   422  04A6                     _CKE  equ     1190
+   423                           	global	_CM0
+   424  04E0                     _CM0  equ     1248
+   425                           	global	_CM1
+   426  04E1                     _CM1  equ     1249
+   427                           	global	_CM2
+   428  04E2                     _CM2  equ     1250
+   429                           	global	_CMIE
+   430  046E                     _CMIE  equ     1134
+   431                           	global	_CSRC
+   432  04C7                     _CSRC  equ     1223
+   433                           	global	_CVR0
+   434  04E8                     _CVR0  equ     1256
+   435                           	global	_CVR1
+   436  04E9                     _CVR1  equ     1257
+   437                           	global	_CVR2
+   438  04EA                     _CVR2  equ     1258
+   439                           	global	_CVR3
+   440  04EB                     _CVR3  equ     1259
+   441                           	global	_CVREN
+   442  04EF                     _CVREN  equ     1263
+   443                           	global	_CVROE
+   444  04EE                     _CVROE  equ     1262
+   445                           	global	_CVRR
+   446  04ED                     _CVRR  equ     1261
+   447                           	global	_DA
+   448  04A5                     _DA  equ     1189
+   449                           	global	_EEIE
+   450  046C                     _EEIE  equ     1132
+   451                           	global	_GCEN
+   452  048F                     _GCEN  equ     1167
+   453                           	global	_IBF
+   454  044F                     _IBF  equ     1103
+   455                           	global	_IBOV
+   456  044D                     _IBOV  equ     1101
+   457                           	global	_INTEDG
+   458  040E                     _INTEDG  equ     1038
+   459                           	global	_OBF
+   460  044E                     _OBF  equ     1102
+   461                           	global	_PCFG0
+   462  04F8                     _PCFG0  equ     1272
+   463                           	global	_PCFG1
+   464  04F9                     _PCFG1  equ     1273
+   465                           	global	_PCFG2
+   466  04FA                     _PCFG2  equ     1274
+   467                           	global	_PCFG3
+   468  04FB                     _PCFG3  equ     1275
+   469                           	global	_PEN
+   470  048A                     _PEN  equ     1162
+   471                           	global	_POR
+   472  0471                     _POR  equ     1137
+   473                           	global	_PS0
+   474  0408                     _PS0  equ     1032
+   475                           	global	_PS1
+   476  0409                     _PS1  equ     1033
+   477                           	global	_PS2
+   478  040A                     _PS2  equ     1034
+   479                           	global	_PSA
+   480  040B                     _PSA  equ     1035
+   481                           	global	_PSPIE
+   482  0467                     _PSPIE  equ     1127
+   483                           	global	_PSPMODE
+   484  044C                     _PSPMODE  equ     1100
+   485                           	global	_RBPU
+   486  040F                     _RBPU  equ     1039
+   487                           	global	_RCEN
+   488  048B                     _RCEN  equ     1163
+   489                           	global	_RCIE
+   490  0465                     _RCIE  equ     1125
+   491                           	global	_RSEN
+   492  0489                     _RSEN  equ     1161
+   493                           	global	_RW
+   494  04A2                     _RW  equ     1186
+   495                           	global	_SEN
+   496  0488                     _SEN  equ     1160
+   497                           	global	_SMP
+   498  04A7                     _SMP  equ     1191
+   499                           	global	_SSPIE
+   500  0463                     _SSPIE  equ     1123
+   501                           	global	_START
+   502  04A3                     _START  equ     1187
+   503                           	global	_STOP
+   504  04A4                     _STOP  equ     1188
+   505                           	global	_SYNC
+   506  04C4                     _SYNC  equ     1220
+   507                           	global	_T0CS
+   508  040D                     _T0CS  equ     1037
+   509                           	global	_T0SE
+   510  040C                     _T0SE  equ     1036
+   511                           	global	_TMR1IE
+   512  0460                     _TMR1IE  equ     1120
+   513                           	global	_TMR2IE
+   514  0461                     _TMR2IE  equ     1121
+   515                           	global	_TRISA0
+   516  0428                     _TRISA0  equ     1064
+   517                           	global	_TRISA1
+   518  0429                     _TRISA1  equ     1065
+   519                           	global	_TRISA2
+   520  042A                     _TRISA2  equ     1066
+   521                           	global	_TRISA3
+   522  042B                     _TRISA3  equ     1067
+   523                           	global	_TRISA4
+   524  042C                     _TRISA4  equ     1068
+   525                           	global	_TRISA5
+   526  042D                     _TRISA5  equ     1069
+   527                           	global	_TRISB0
+   528  0430                     _TRISB0  equ     1072
+   529                           	global	_TRISB1
+   530  0431                     _TRISB1  equ     1073
+   531                           	global	_TRISB2
+   532  0432                     _TRISB2  equ     1074
+   533                           	global	_TRISB3
+   534  0433                     _TRISB3  equ     1075
+   535                           	global	_TRISB4
+   536  0434                     _TRISB4  equ     1076
+   537                           	global	_TRISB5
+   538  0435                     _TRISB5  equ     1077
+   539                           	global	_TRISB6
+   540  0436                     _TRISB6  equ     1078
+   541                           	global	_TRISB7
+   542  0437                     _TRISB7  equ     1079
+   543                           	global	_TRISC0
+   544  0438                     _TRISC0  equ     1080
+   545                           	global	_TRISC1
+   546  0439                     _TRISC1  equ     1081
+   547                           	global	_TRISC2
+   548  043A                     _TRISC2  equ     1082
+   549                           	global	_TRISC3
+   550  043B                     _TRISC3  equ     1083
+   551                           	global	_TRISC4
+   552  043C                     _TRISC4  equ     1084
+   553                           	global	_TRISC5
+   554  043D                     _TRISC5  equ     1085
+   555                           	global	_TRISC6
+   556  043E                     _TRISC6  equ     1086
+   557                           	global	_TRISC7
+   558  043F                     _TRISC7  equ     1087
+   559                           	global	_TRISD0
+   560  0440                     _TRISD0  equ     1088
+   561                           	global	_TRISD1
+   562  0441                     _TRISD1  equ     1089
+   563                           	global	_TRISD2
+   564  0442                     _TRISD2  equ     1090
+   565                           	global	_TRISD3
+   566  0443                     _TRISD3  equ     1091
+   567                           	global	_TRISD4
+   568  0444                     _TRISD4  equ     1092
+   569                           	global	_TRISD5
+   570  0445                     _TRISD5  equ     1093
+   571                           	global	_TRISD6
+   572  0446                     _TRISD6  equ     1094
+   573                           	global	_TRISD7
+   574  0447                     _TRISD7  equ     1095
+   575                           	global	_TRISE0
+   576  0448                     _TRISE0  equ     1096
+   577                           	global	_TRISE1
+   578  0449                     _TRISE1  equ     1097
+   579                           	global	_TRISE2
+   580  044A                     _TRISE2  equ     1098
+   581                           	global	_TRMT
+   582  04C1                     _TRMT  equ     1217
+   583                           	global	_TX9
+   584  04C6                     _TX9  equ     1222
+   585                           	global	_TX9D
+   586  04C0                     _TX9D  equ     1216
+   587                           	global	_TXEN
+   588  04C5                     _TXEN  equ     1221
+   589                           	global	_TXIE
+   590  0464                     _TXIE  equ     1124
+   591                           	global	_UA
+   592  04A1                     _UA  equ     1185
+   593                           	global	_EEADR
+   594  010D                     _EEADR  equ     269
+   595                           	global	_EEADRH
+   596  010F                     _EEADRH  equ     271
+   597                           	global	_EEADRL
+   598  010D                     _EEADRL  equ     269
+   599                           	global	_EEDATA
+   600  010C                     _EEDATA  equ     268
+   601                           	global	_EEDATH
+   602  010E                     _EEDATH  equ     270
+   603                           	global	_EECON1
+   604  018C                     _EECON1  equ     396
+   605                           	global	_EECON2
+   606  018D                     _EECON2  equ     397
+   607                           	global	_EEPGD
+   608  0C67                     _EEPGD  equ     3175
+   609                           	global	_RD
+   610  0C60                     _RD  equ     3168
+   611                           	global	_WR
+   612  0C61                     _WR  equ     3169
+   613                           	global	_WREN
+   614  0C62                     _WREN  equ     3170
+   615                           	global	_WRERR
+   616  0C63                     _WRERR  equ     3171
+   617                           	file	"IRtransmitter.as"
+   618                           	line	#
+   619                           psect cinit,class=CODE,delta=2
+   620                           global start_initialization
+   621  040F                     start_initialization:
+   622                           
+   623                           psect	bssCOMMON,class=COMMON,space=1
+   624                           global __pbssCOMMON
+   625  0079                     __pbssCOMMON:
+   626  0079                     _delayus_variable:
+   627  0079                            ds      1
+   628                           
+   629                           ; Clear objects allocated to COMMON
+   630                           psect cinit,class=CODE,delta=2
+   631  040F  01F9               	clrf	((__pbssCOMMON)+0)&07Fh
+   632                           psect cinit,class=CODE,delta=2
+   633                           global end_of_initialization
+   634                           
+   635                           ;End of C runtime variable initationation code
+   636                           
+   637  0410                     end_of_initialization:
+   638  0410  0183               clrf status
+   639  0411  120A  118A  2DC1   ljmp _main	;jump to C main() function
+   640                           psect	cstackCOMMON,class=COMMON,space=1
+   641                           global __pcstackCOMMON
+   642  0070                     __pcstackCOMMON:
+   643                           	global	??_UART_Write
+   644  0070                     ??_UART_Write: ;@ 0x0
+   645                           	global	?_UART_Stop
+   646  0070                     ?_UART_Stop: ;@ 0x0
+   647                           	global	??_UART_Stop
+   648  0070                     ??_UART_Stop: ;@ 0x0
+   649                           	global	??___aldiv
+   650  0070                     ??___aldiv: ;@ 0x0
+   651                           	global	UART_Write@data
+   652  0070                     UART_Write@data:	; 1 bytes @ 0x0
+   653  0070                     	ds	1
+   654                           	global	?_UART_Write
+   655  0071                     ?_UART_Write: ;@ 0x1
+   656                           	global	??_main
+   657  0071                     ??_main: ;@ 0x1
+   658                           	global	___aldiv@counter
+   659  0071                     ___aldiv@counter:	; 1 bytes @ 0x1
+   660  0071                     	ds	1
+   661                           	global	___aldiv@sign
+   662  0072                     ___aldiv@sign:	; 1 bytes @ 0x2
+   663  0072                     	ds	1
+   664                           	global	___aldiv@quotient
+   665  0073                     ___aldiv@quotient:	; 4 bytes @ 0x3
+   666  0073                     	ds	4
+   667                           	global	UART_Init@x
+   668  0077                     UART_Init@x:	; 2 bytes @ 0x7
+   669  0077                     	ds	2
+   670                           psect	cstackBANK0,class=BANK0,space=1
+   671                           global __pcstackBANK0
+   672  0020                     __pcstackBANK0:
+   673                           	global	?___aldiv
+   674  0020                     ?___aldiv: ;@ 0x0
+   675                           	global	___aldiv@dividend
+   676  0020                     ___aldiv@dividend:	; 4 bytes @ 0x0
+   677  0020                     	ds	4
+   678                           	global	___aldiv@divisor
+   679  0024                     ___aldiv@divisor:	; 4 bytes @ 0x4
+   680  0024                     	ds	4
+   681                           	global	??_UART_Init
+   682  0028                     ??_UART_Init: ;@ 0x8
+   683  0028                     	ds	12
+   684                           	global	?_UART_Init
+   685  0034                     ?_UART_Init: ;@ 0x14
+   686                           	global	UART_Init@baudrate
+   687  0034                     UART_Init@baudrate:	; 4 bytes @ 0x14
+   688  0034                     	ds	4
+   689                           	global	?_main
+   690  0038                     ?_main: ;@ 0x18
+   691                           ;Data sizes: Strings 0, constant 0, data 0, bss 1, persistent 0 stack 0
+   692                           ;Auto spaces:   Size  Autos    Used
+   693                           ; COMMON          14      9      10
+   694                           ; BANK0           80     24      24
+   695                           ; BANK1           80      0       0
+   696                           ; BANK3           96      0       0
+   697                           ; BANK2           96      0       0
+   698                           
+   699                           
+   700                           ;Pointer list with targets:
+   701                           
+   702                           ;?___aldiv	long  size(1); Largest target is 0
+   703                           
+   704                           
+   705                           ;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   706                           
+   707                           
+   708                           ;Call graph:                      Base Space Used Autos Args Refs Density
+   709                           ;_main                                                0    0  538   0.00
+   710                           ;          _UART_Init
+   711                           ;         _UART_Write
+   712                           ;          _UART_Stop
+   713                           ;  _UART_Write                                        1    0   10   0.00
+   714                           ;                                    0 COMMO    1
+   715                           ;  _UART_Stop                                         0    0    0   0.00
+   716                           ;  _UART_Init                                        14    4  528   0.00
+   717                           ;                                    7 COMMO    2
+   718                           ;                                    8 BANK0   16
+   719                           ;            ___aldiv
+   720                           ;    ___aldiv                                         7    8  354   0.00
+   721                           ;                                    0 COMMO    7
+   722                           ;                                    0 BANK0    8
+   723                           ; Estimated maximum call depth 2
+   724                           ; Address spaces:
+   725                           
+   726                           ;Name               Size   Autos  Total    Cost      Usage
+   727                           ;BITCOMMON            E      0       0       0        0.0%
+   728                           ;CODE                 0      0       0       0        0.0%
+   729                           ;NULL                 0      0       0       0        0.0%
+   730                           ;COMMON               E      9       A       1       71.4%
+   731                           ;SFR0                 0      0       0       1        0.0%
+   732                           ;BITSFR0              0      0       0       1        0.0%
+   733                           ;BITSFR1              0      0       0       2        0.0%
+   734                           ;SFR1                 0      0       0       2        0.0%
+   735                           ;ABS                  0      0      22       2        0.0%
+   736                           ;STACK                0      0       0       3        0.0%
+   737                           ;BITBANK0            50      0       0       4        0.0%
+   738                           ;SFR3                 0      0       0       4        0.0%
+   739                           ;BITSFR3              0      0       0       4        0.0%
+   740                           ;BANK0               50     18      18       5       30.0%
+   741                           ;BITSFR2              0      0       0       5        0.0%
+   742                           ;SFR2                 0      0       0       5        0.0%
+   743                           ;BITBANK1            50      0       0       6        0.0%
+   744                           ;BANK1               50      0       0       7        0.0%
+   745                           ;BITBANK3            60      0       0       8        0.0%
+   746                           ;BANK3               60      0       0       9        0.0%
+   747                           ;BITBANK2            60      0       0      10        0.0%
+   748                           ;BANK2               60      0       0      11        0.0%
+   749                           ;DATA                 0      0      22      12        0.0%
+   750                           ;EEDATA             100      0       0    1000        0.0%
+   751                           
+   752                           	global	_main
+   753                           psect	maintext,local,class=CODE,delta=2
+   754                           global __pmaintext
+   755  05C1                     __pmaintext:
+   756                           
+   757                           ; *************** function _main *****************
+   758                           ; Defined at:
+   759                           ;		line 33 in file "C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+   760                           ; Parameters:    Size  Location     Type
+   761                           ;		None
+   762                           ; Auto vars:     Size  Location     Type
+   763                           ;		None
+   764                           ; Return value:  Size  Location     Type
+   765                           ;		None               void
+   766                           ; Registers used:
+   767                           ;		wreg, status,2, status,0, pclath, cstack
+   768                           ; Tracked objects:
+   769                           ;		On entry : 17F/0
+   770                           ;		On exit  : 0/0
+   771                           ;		Unchanged: 0/0
+   772                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   773                           ;      Locals:         0       0       0       0       0
+   774                           ;      Temp:     0
+   775                           ;      Total:    0
+   776                           ; This function calls:
+   777                           ;		_UART_Init
+   778                           ;		_UART_Write
+   779                           ;		_UART_Stop
+   780                           ; This function is called by:
+   781                           ;		Startup code after reset
+   782                           ; This function uses a non-reentrant model
+   783                           ; 
+   784                           psect	maintext
+   785                           	file	"C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+   786                           	line	33
+   787                           	global	__size_of_main
+   788  023F                     	__size_of_main	equ	__end_of_main-_main
+   789                           ;IRtransmitter.c: 32: void main()
+   790                           ;IRtransmitter.c: 33: {
+   791                           	
+   792  05C1                     _main:	
+   793                           	opt stack 8
+   794                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   795                           	line	34
+   796                           	
+   797  05C1                     l30000676:	
+   798                           ;IRtransmitter.c: 34: TRISB=0xFF;
+   799  05C1  30FF               	movlw	(0FFh)
+   800  05C2  1683               	bsf	status, 5	;RP0=1, select bank1
+   801  05C3  1303               	bcf	status, 6	;RP1=0, select bank1
+   802  05C4  0086               	movwf	(134)^080h	;volatile
+   803                           	line	35
+   804                           ;IRtransmitter.c: 35: TRISC=0b10111011;
+   805  05C5  30BB               	movlw	(0BBh)
+   806  05C6  0087               	movwf	(135)^080h	;volatile
+   807                           	
+   808  05C7                     l30000677:	
+   809                           	line	36
+   810                           ;IRtransmitter.c: 36: PORTC=0;
+   811  05C7  1003               	clrc
+   812  05C8  3000               	movlw	0
+   813  05C9  1803               	btfsc	status,0
+   814  05CA  3001               	movlw	1
+   815  05CB  1283               	bcf	status, 5	;RP0=0, select bank0
+   816  05CC  1303               	bcf	status, 6	;RP1=0, select bank0
+   817  05CD  0087               	movwf	(7)	;volatile
+   818                           	
+   819  05CE                     l30000678:	
+   820                           	line	38
+   821                           ;IRtransmitter.c: 38: PR2 = 0b00011001 ;
+   822  05CE  3019               	movlw	(019h)
+   823  05CF  1683               	bsf	status, 5	;RP0=1, select bank1
+   824  05D0  1303               	bcf	status, 6	;RP1=0, select bank1
+   825  05D1  0092               	movwf	(146)^080h	;volatile
+   826                           	
+   827  05D2                     l30000679:	
+   828                           	line	39
+   829                           ;IRtransmitter.c: 39: T2CON = 0b00000100 ;
+   830  05D2  3004               	movlw	(04h)
+   831  05D3  1283               	bcf	status, 5	;RP0=0, select bank0
+   832  05D4  1303               	bcf	status, 6	;RP1=0, select bank0
+   833  05D5  0092               	movwf	(18)	;volatile
+   834                           	
+   835  05D6                     l30000680:	
+   836                           	line	40
+   837                           ;IRtransmitter.c: 40: CCPR1L = 0b00011001 ;
+   838  05D6  3019               	movlw	(019h)
+   839  05D7  0095               	movwf	(21)	;volatile
+   840                           	
+   841  05D8                     l30000681:	
+   842                           	line	41
+   843                           ;IRtransmitter.c: 41: CCP1CON = 0b00111100 ;
+   844  05D8  303C               	movlw	(03Ch)
+   845  05D9  0097               	movwf	(23)	;volatile
+   846                           	
+   847  05DA                     l30000682:	
+   848                           	line	53
+   849                           ;IRtransmitter.c: 44: {
+   850                           ;IRtransmitter.c: 53: if(RC5==0){
+   851  05DA  1A87               	btfsc	(61/8),(61)&7
+   852  05DB  2DDD               	goto	u981
+   853  05DC  2DDE               	goto	u980
+   854  05DD                     u981:
+   855  05DD  2E04               	goto	l30000689
+   856  05DE                     u980:
+   857                           	
+   858  05DE                     l30000683:	
+   859                           	line	55
+   860                           ;IRtransmitter.c: 55: UART_Init(4800);
+   861  05DE  3000               	movlw	0
+   862  05DF  00B7               	movwf	(?_UART_Init+3)
+   863  05E0  3000               	movlw	0
+   864  05E1  00B6               	movwf	(?_UART_Init+2)
+   865  05E2  3012               	movlw	012h
+   866  05E3  00B5               	movwf	(?_UART_Init+1)
+   867  05E4  30C0               	movlw	0C0h
+   868  05E5  00B4               	movwf	(?_UART_Init)
+   869                           
+   870  05E6  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+   871                           	
+   872  05EB                     l30000684:	
+   873                           	line	56
+   874                           ;IRtransmitter.c: 56: CCPR1L = 0b00001100 ;
+   875  05EB  300C               	movlw	(0Ch)
+   876  05EC  1283               	bcf	status, 5	;RP0=0, select bank0
+   877  05ED  1303               	bcf	status, 6	;RP1=0, select bank0
+   878  05EE  0095               	movwf	(21)	;volatile
+   879                           	
+   880  05EF                     l30000685:	
+   881                           	line	57
+   882                           ;IRtransmitter.c: 57: UART_Write('A');
+   883  05EF  3041               	movlw	(041h)
+   884  05F0  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+   885                           	
+   886  05F5                     l30000686:	
+   887                           	line	59
+   888                           ;IRtransmitter.c: 59: while(RC5==0);
+   889  05F5  1283               	bcf	status, 5	;RP0=0, select bank0
+   890  05F6  1303               	bcf	status, 6	;RP1=0, select bank0
+   891  05F7  1E87               	btfss	(61/8),(61)&7
+   892  05F8  2DFA               	goto	u991
+   893  05F9  2DFB               	goto	u990
+   894  05FA                     u991:
+   895  05FA  2DF5               	goto	l30000686
+   896  05FB                     u990:
+   897                           	
+   898  05FB                     l30000687:	
+   899                           	line	60
+   900                           ;IRtransmitter.c: 60: UART_Stop();
+   901  05FB  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+   902                           	
+   903  0600                     l30000688:	
+   904                           	line	61
+   905                           ;IRtransmitter.c: 61: CCPR1L = 0b00011001 ;
+   906  0600  3019               	movlw	(019h)
+   907  0601  1283               	bcf	status, 5	;RP0=0, select bank0
+   908  0602  1303               	bcf	status, 6	;RP1=0, select bank0
+   909  0603  0095               	movwf	(21)	;volatile
+   910                           	
+   911  0604                     l30000689:	
+   912                           	line	64
+   913                           ;IRtransmitter.c: 62: }
+   914                           ;IRtransmitter.c: 64: if(RB3==0){
+   915  0604  1986               	btfsc	(51/8),(51)&7
+   916  0605  2E07               	goto	u1001
+   917  0606  2E08               	goto	u1000
+   918  0607                     u1001:
+   919  0607  2E2E               	goto	l30000696
+   920  0608                     u1000:
+   921                           	
+   922  0608                     l30000690:	
+   923                           	line	65
+   924                           ;IRtransmitter.c: 65: UART_Init(4800);
+   925  0608  3000               	movlw	0
+   926  0609  00B7               	movwf	(?_UART_Init+3)
+   927  060A  3000               	movlw	0
+   928  060B  00B6               	movwf	(?_UART_Init+2)
+   929  060C  3012               	movlw	012h
+   930  060D  00B5               	movwf	(?_UART_Init+1)
+   931  060E  30C0               	movlw	0C0h
+   932  060F  00B4               	movwf	(?_UART_Init)
+   933                           
+   934  0610  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+   935                           	
+   936  0615                     l30000691:	
+   937                           	line	66
+   938                           ;IRtransmitter.c: 66: CCPR1L = 0b00001100 ;
+   939  0615  300C               	movlw	(0Ch)
+   940  0616  1283               	bcf	status, 5	;RP0=0, select bank0
+   941  0617  1303               	bcf	status, 6	;RP1=0, select bank0
+   942  0618  0095               	movwf	(21)	;volatile
+   943                           	
+   944  0619                     l30000692:	
+   945                           	line	67
+   946                           ;IRtransmitter.c: 67: UART_Write('B');
+   947  0619  3042               	movlw	(042h)
+   948  061A  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+   949                           	
+   950  061F                     l30000693:	
+   951                           	line	69
+   952                           ;IRtransmitter.c: 69: while(RB3==0);
+   953  061F  1283               	bcf	status, 5	;RP0=0, select bank0
+   954  0620  1303               	bcf	status, 6	;RP1=0, select bank0
+   955  0621  1D86               	btfss	(51/8),(51)&7
+   956  0622  2E24               	goto	u1011
+   957  0623  2E25               	goto	u1010
+   958  0624                     u1011:
+   959  0624  2E1F               	goto	l30000693
+   960  0625                     u1010:
+   961                           	
+   962  0625                     l30000694:	
+   963                           	line	70
+   964                           ;IRtransmitter.c: 70: UART_Stop();
+   965  0625  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+   966                           	
+   967  062A                     l30000695:	
+   968                           	line	71
+   969                           ;IRtransmitter.c: 71: CCPR1L = 0b00011001 ;
+   970  062A  3019               	movlw	(019h)
+   971  062B  1283               	bcf	status, 5	;RP0=0, select bank0
+   972  062C  1303               	bcf	status, 6	;RP1=0, select bank0
+   973  062D  0095               	movwf	(21)	;volatile
+   974                           	
+   975  062E                     l30000696:	
+   976                           	line	73
+   977                           ;IRtransmitter.c: 72: }
+   978                           ;IRtransmitter.c: 73: if(RB7==0){
+   979  062E  1B86               	btfsc	(55/8),(55)&7
+   980  062F  2E31               	goto	u1021
+   981  0630  2E32               	goto	u1020
+   982  0631                     u1021:
+   983  0631  2E58               	goto	l30000703
+   984  0632                     u1020:
+   985                           	
+   986  0632                     l30000697:	
+   987                           	line	74
+   988                           ;IRtransmitter.c: 74: UART_Init(4800) ;
+   989  0632  3000               	movlw	0
+   990  0633  00B7               	movwf	(?_UART_Init+3)
+   991  0634  3000               	movlw	0
+   992  0635  00B6               	movwf	(?_UART_Init+2)
+   993  0636  3012               	movlw	012h
+   994  0637  00B5               	movwf	(?_UART_Init+1)
+   995  0638  30C0               	movlw	0C0h
+   996  0639  00B4               	movwf	(?_UART_Init)
+   997                           
+   998  063A  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+   999                           	
+  1000  063F                     l30000698:	
+  1001                           	line	75
+  1002                           ;IRtransmitter.c: 75: CCPR1L = 0b00001100 ;
+  1003  063F  300C               	movlw	(0Ch)
+  1004  0640  1283               	bcf	status, 5	;RP0=0, select bank0
+  1005  0641  1303               	bcf	status, 6	;RP1=0, select bank0
+  1006  0642  0095               	movwf	(21)	;volatile
+  1007                           	
+  1008  0643                     l30000699:	
+  1009                           	line	76
+  1010                           ;IRtransmitter.c: 76: UART_Write('C');
+  1011  0643  3043               	movlw	(043h)
+  1012  0644  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1013                           	
+  1014  0649                     l30000700:	
+  1015                           	line	78
+  1016                           ;IRtransmitter.c: 78: while(RB7==0);
+  1017  0649  1283               	bcf	status, 5	;RP0=0, select bank0
+  1018  064A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1019  064B  1F86               	btfss	(55/8),(55)&7
+  1020  064C  2E4E               	goto	u1031
+  1021  064D  2E4F               	goto	u1030
+  1022  064E                     u1031:
+  1023  064E  2E49               	goto	l30000700
+  1024  064F                     u1030:
+  1025                           	
+  1026  064F                     l30000701:	
+  1027                           	line	79
+  1028                           ;IRtransmitter.c: 79: UART_Stop();
+  1029  064F  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1030                           	
+  1031  0654                     l30000702:	
+  1032                           	line	80
+  1033                           ;IRtransmitter.c: 80: CCPR1L = 0b00011001 ;
+  1034  0654  3019               	movlw	(019h)
+  1035  0655  1283               	bcf	status, 5	;RP0=0, select bank0
+  1036  0656  1303               	bcf	status, 6	;RP1=0, select bank0
+  1037  0657  0095               	movwf	(21)	;volatile
+  1038                           	
+  1039  0658                     l30000703:	
+  1040                           	line	82
+  1041                           ;IRtransmitter.c: 81: }
+  1042                           ;IRtransmitter.c: 82: if(RC4==0){
+  1043  0658  1A07               	btfsc	(60/8),(60)&7
+  1044  0659  2E5B               	goto	u1041
+  1045  065A  2E5C               	goto	u1040
+  1046  065B                     u1041:
+  1047  065B  2E82               	goto	l30000710
+  1048  065C                     u1040:
+  1049                           	
+  1050  065C                     l30000704:	
+  1051                           	line	83
+  1052                           ;IRtransmitter.c: 83: UART_Init(4800);
+  1053  065C  3000               	movlw	0
+  1054  065D  00B7               	movwf	(?_UART_Init+3)
+  1055  065E  3000               	movlw	0
+  1056  065F  00B6               	movwf	(?_UART_Init+2)
+  1057  0660  3012               	movlw	012h
+  1058  0661  00B5               	movwf	(?_UART_Init+1)
+  1059  0662  30C0               	movlw	0C0h
+  1060  0663  00B4               	movwf	(?_UART_Init)
+  1061                           
+  1062  0664  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1063                           	
+  1064  0669                     l30000705:	
+  1065                           	line	84
+  1066                           ;IRtransmitter.c: 84: CCPR1L = 0b00001100 ;
+  1067  0669  300C               	movlw	(0Ch)
+  1068  066A  1283               	bcf	status, 5	;RP0=0, select bank0
+  1069  066B  1303               	bcf	status, 6	;RP1=0, select bank0
+  1070  066C  0095               	movwf	(21)	;volatile
+  1071                           	
+  1072  066D                     l30000706:	
+  1073                           	line	85
+  1074                           ;IRtransmitter.c: 85: UART_Write('D');
+  1075  066D  3044               	movlw	(044h)
+  1076  066E  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1077                           	
+  1078  0673                     l30000707:	
+  1079                           	line	87
+  1080                           ;IRtransmitter.c: 87: while(RC4==0);
+  1081  0673  1283               	bcf	status, 5	;RP0=0, select bank0
+  1082  0674  1303               	bcf	status, 6	;RP1=0, select bank0
+  1083  0675  1E07               	btfss	(60/8),(60)&7
+  1084  0676  2E78               	goto	u1051
+  1085  0677  2E79               	goto	u1050
+  1086  0678                     u1051:
+  1087  0678  2E73               	goto	l30000707
+  1088  0679                     u1050:
+  1089                           	
+  1090  0679                     l30000708:	
+  1091                           	line	88
+  1092                           ;IRtransmitter.c: 88: UART_Stop();
+  1093  0679  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1094                           	
+  1095  067E                     l30000709:	
+  1096                           	line	89
+  1097                           ;IRtransmitter.c: 89: CCPR1L = 0b00011001 ;
+  1098  067E  3019               	movlw	(019h)
+  1099  067F  1283               	bcf	status, 5	;RP0=0, select bank0
+  1100  0680  1303               	bcf	status, 6	;RP1=0, select bank0
+  1101  0681  0095               	movwf	(21)	;volatile
+  1102                           	
+  1103  0682                     l30000710:	
+  1104                           	line	91
+  1105                           ;IRtransmitter.c: 90: }
+  1106                           ;IRtransmitter.c: 91: if(RB2==0){
+  1107  0682  1906               	btfsc	(50/8),(50)&7
+  1108  0683  2E85               	goto	u1061
+  1109  0684  2E86               	goto	u1060
+  1110  0685                     u1061:
+  1111  0685  2EAC               	goto	l30000717
+  1112  0686                     u1060:
+  1113                           	
+  1114  0686                     l30000711:	
+  1115                           	line	92
+  1116                           ;IRtransmitter.c: 92: UART_Init(4800);
+  1117  0686  3000               	movlw	0
+  1118  0687  00B7               	movwf	(?_UART_Init+3)
+  1119  0688  3000               	movlw	0
+  1120  0689  00B6               	movwf	(?_UART_Init+2)
+  1121  068A  3012               	movlw	012h
+  1122  068B  00B5               	movwf	(?_UART_Init+1)
+  1123  068C  30C0               	movlw	0C0h
+  1124  068D  00B4               	movwf	(?_UART_Init)
+  1125                           
+  1126  068E  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1127                           	
+  1128  0693                     l30000712:	
+  1129                           	line	93
+  1130                           ;IRtransmitter.c: 93: CCPR1L = 0b00001100 ;
+  1131  0693  300C               	movlw	(0Ch)
+  1132  0694  1283               	bcf	status, 5	;RP0=0, select bank0
+  1133  0695  1303               	bcf	status, 6	;RP1=0, select bank0
+  1134  0696  0095               	movwf	(21)	;volatile
+  1135                           	
+  1136  0697                     l30000713:	
+  1137                           	line	94
+  1138                           ;IRtransmitter.c: 94: UART_Write('E');
+  1139  0697  3045               	movlw	(045h)
+  1140  0698  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1141                           	
+  1142  069D                     l30000714:	
+  1143                           	line	96
+  1144                           ;IRtransmitter.c: 96: while(RB2==0);
+  1145  069D  1283               	bcf	status, 5	;RP0=0, select bank0
+  1146  069E  1303               	bcf	status, 6	;RP1=0, select bank0
+  1147  069F  1D06               	btfss	(50/8),(50)&7
+  1148  06A0  2EA2               	goto	u1071
+  1149  06A1  2EA3               	goto	u1070
+  1150  06A2                     u1071:
+  1151  06A2  2E9D               	goto	l30000714
+  1152  06A3                     u1070:
+  1153                           	
+  1154  06A3                     l30000715:	
+  1155                           	line	97
+  1156                           ;IRtransmitter.c: 97: UART_Stop();
+  1157  06A3  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1158                           	
+  1159  06A8                     l30000716:	
+  1160                           	line	98
+  1161                           ;IRtransmitter.c: 98: CCPR1L = 0b00011001 ;
+  1162  06A8  3019               	movlw	(019h)
+  1163  06A9  1283               	bcf	status, 5	;RP0=0, select bank0
+  1164  06AA  1303               	bcf	status, 6	;RP1=0, select bank0
+  1165  06AB  0095               	movwf	(21)	;volatile
+  1166                           	
+  1167  06AC                     l30000717:	
+  1168                           	line	100
+  1169                           ;IRtransmitter.c: 99: }
+  1170                           ;IRtransmitter.c: 100: if(RB6==0){
+  1171  06AC  1B06               	btfsc	(54/8),(54)&7
+  1172  06AD  2EAF               	goto	u1081
+  1173  06AE  2EB0               	goto	u1080
+  1174  06AF                     u1081:
+  1175  06AF  2ED6               	goto	l30000724
+  1176  06B0                     u1080:
+  1177                           	
+  1178  06B0                     l30000718:	
+  1179                           	line	101
+  1180                           ;IRtransmitter.c: 101: UART_Init(4800);
+  1181  06B0  3000               	movlw	0
+  1182  06B1  00B7               	movwf	(?_UART_Init+3)
+  1183  06B2  3000               	movlw	0
+  1184  06B3  00B6               	movwf	(?_UART_Init+2)
+  1185  06B4  3012               	movlw	012h
+  1186  06B5  00B5               	movwf	(?_UART_Init+1)
+  1187  06B6  30C0               	movlw	0C0h
+  1188  06B7  00B4               	movwf	(?_UART_Init)
+  1189                           
+  1190  06B8  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1191                           	
+  1192  06BD                     l30000719:	
+  1193                           	line	102
+  1194                           ;IRtransmitter.c: 102: CCPR1L = 0b00001100 ;
+  1195  06BD  300C               	movlw	(0Ch)
+  1196  06BE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1197  06BF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1198  06C0  0095               	movwf	(21)	;volatile
+  1199                           	
+  1200  06C1                     l30000720:	
+  1201                           	line	103
+  1202                           ;IRtransmitter.c: 103: UART_Write('F');
+  1203  06C1  3046               	movlw	(046h)
+  1204  06C2  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1205                           	
+  1206  06C7                     l30000721:	
+  1207                           	line	105
+  1208                           ;IRtransmitter.c: 105: while(RB6==0);
+  1209  06C7  1283               	bcf	status, 5	;RP0=0, select bank0
+  1210  06C8  1303               	bcf	status, 6	;RP1=0, select bank0
+  1211  06C9  1F06               	btfss	(54/8),(54)&7
+  1212  06CA  2ECC               	goto	u1091
+  1213  06CB  2ECD               	goto	u1090
+  1214  06CC                     u1091:
+  1215  06CC  2EC7               	goto	l30000721
+  1216  06CD                     u1090:
+  1217                           	
+  1218  06CD                     l30000722:	
+  1219                           	line	106
+  1220                           ;IRtransmitter.c: 106: UART_Stop();
+  1221  06CD  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1222                           	
+  1223  06D2                     l30000723:	
+  1224                           	line	107
+  1225                           ;IRtransmitter.c: 107: CCPR1L = 0b00011001 ;
+  1226  06D2  3019               	movlw	(019h)
+  1227  06D3  1283               	bcf	status, 5	;RP0=0, select bank0
+  1228  06D4  1303               	bcf	status, 6	;RP1=0, select bank0
+  1229  06D5  0095               	movwf	(21)	;volatile
+  1230                           	
+  1231  06D6                     l30000724:	
+  1232                           	line	109
+  1233                           ;IRtransmitter.c: 108: }
+  1234                           ;IRtransmitter.c: 109: if(RC0==0){
+  1235  06D6  1807               	btfsc	(56/8),(56)&7
+  1236  06D7  2ED9               	goto	u1101
+  1237  06D8  2EDA               	goto	u1100
+  1238  06D9                     u1101:
+  1239  06D9  2F00               	goto	l30000731
+  1240  06DA                     u1100:
+  1241                           	
+  1242  06DA                     l30000725:	
+  1243                           	line	110
+  1244                           ;IRtransmitter.c: 110: UART_Init(4800);
+  1245  06DA  3000               	movlw	0
+  1246  06DB  00B7               	movwf	(?_UART_Init+3)
+  1247  06DC  3000               	movlw	0
+  1248  06DD  00B6               	movwf	(?_UART_Init+2)
+  1249  06DE  3012               	movlw	012h
+  1250  06DF  00B5               	movwf	(?_UART_Init+1)
+  1251  06E0  30C0               	movlw	0C0h
+  1252  06E1  00B4               	movwf	(?_UART_Init)
+  1253                           
+  1254  06E2  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1255                           	
+  1256  06E7                     l30000726:	
+  1257                           	line	111
+  1258                           ;IRtransmitter.c: 111: CCPR1L = 0b00001100 ;
+  1259  06E7  300C               	movlw	(0Ch)
+  1260  06E8  1283               	bcf	status, 5	;RP0=0, select bank0
+  1261  06E9  1303               	bcf	status, 6	;RP1=0, select bank0
+  1262  06EA  0095               	movwf	(21)	;volatile
+  1263                           	
+  1264  06EB                     l30000727:	
+  1265                           	line	112
+  1266                           ;IRtransmitter.c: 112: UART_Write('G');
+  1267  06EB  3047               	movlw	(047h)
+  1268  06EC  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1269                           	
+  1270  06F1                     l30000728:	
+  1271                           	line	114
+  1272                           ;IRtransmitter.c: 114: while(RC0==0);
+  1273  06F1  1283               	bcf	status, 5	;RP0=0, select bank0
+  1274  06F2  1303               	bcf	status, 6	;RP1=0, select bank0
+  1275  06F3  1C07               	btfss	(56/8),(56)&7
+  1276  06F4  2EF6               	goto	u1111
+  1277  06F5  2EF7               	goto	u1110
+  1278  06F6                     u1111:
+  1279  06F6  2EF1               	goto	l30000728
+  1280  06F7                     u1110:
+  1281                           	
+  1282  06F7                     l30000729:	
+  1283                           	line	115
+  1284                           ;IRtransmitter.c: 115: UART_Stop();
+  1285  06F7  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1286                           	
+  1287  06FC                     l30000730:	
+  1288                           	line	116
+  1289                           ;IRtransmitter.c: 116: CCPR1L = 0b00011001 ;
+  1290  06FC  3019               	movlw	(019h)
+  1291  06FD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1292  06FE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1293  06FF  0095               	movwf	(21)	;volatile
+  1294                           	
+  1295  0700                     l30000731:	
+  1296                           	line	118
+  1297                           ;IRtransmitter.c: 117: }
+  1298                           ;IRtransmitter.c: 118: if(RB0==0){
+  1299  0700  1806               	btfsc	(48/8),(48)&7
+  1300  0701  2F03               	goto	u1121
+  1301  0702  2F04               	goto	u1120
+  1302  0703                     u1121:
+  1303  0703  2F2A               	goto	l30000738
+  1304  0704                     u1120:
+  1305                           	
+  1306  0704                     l30000732:	
+  1307                           	line	119
+  1308                           ;IRtransmitter.c: 119: UART_Init(4800);
+  1309  0704  3000               	movlw	0
+  1310  0705  00B7               	movwf	(?_UART_Init+3)
+  1311  0706  3000               	movlw	0
+  1312  0707  00B6               	movwf	(?_UART_Init+2)
+  1313  0708  3012               	movlw	012h
+  1314  0709  00B5               	movwf	(?_UART_Init+1)
+  1315  070A  30C0               	movlw	0C0h
+  1316  070B  00B4               	movwf	(?_UART_Init)
+  1317                           
+  1318  070C  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1319                           	
+  1320  0711                     l30000733:	
+  1321                           	line	120
+  1322                           ;IRtransmitter.c: 120: CCPR1L = 0b00001100 ;
+  1323  0711  300C               	movlw	(0Ch)
+  1324  0712  1283               	bcf	status, 5	;RP0=0, select bank0
+  1325  0713  1303               	bcf	status, 6	;RP1=0, select bank0
+  1326  0714  0095               	movwf	(21)	;volatile
+  1327                           	
+  1328  0715                     l30000734:	
+  1329                           	line	121
+  1330                           ;IRtransmitter.c: 121: UART_Write('K');
+  1331  0715  304B               	movlw	(04Bh)
+  1332  0716  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1333                           	
+  1334  071B                     l30000735:	
+  1335                           	line	123
+  1336                           ;IRtransmitter.c: 123: while(RB0==0);
+  1337  071B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1338  071C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1339  071D  1C06               	btfss	(48/8),(48)&7
+  1340  071E  2F20               	goto	u1131
+  1341  071F  2F21               	goto	u1130
+  1342  0720                     u1131:
+  1343  0720  2F1B               	goto	l30000735
+  1344  0721                     u1130:
+  1345                           	
+  1346  0721                     l30000736:	
+  1347                           	line	124
+  1348                           ;IRtransmitter.c: 124: UART_Stop();
+  1349  0721  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1350                           	
+  1351  0726                     l30000737:	
+  1352                           	line	125
+  1353                           ;IRtransmitter.c: 125: CCPR1L = 0b00011001 ;
+  1354  0726  3019               	movlw	(019h)
+  1355  0727  1283               	bcf	status, 5	;RP0=0, select bank0
+  1356  0728  1303               	bcf	status, 6	;RP1=0, select bank0
+  1357  0729  0095               	movwf	(21)	;volatile
+  1358                           	
+  1359  072A                     l30000738:	
+  1360                           	line	128
+  1361                           ;IRtransmitter.c: 127: }
+  1362                           ;IRtransmitter.c: 128: if(RB1==0){
+  1363  072A  1886               	btfsc	(49/8),(49)&7
+  1364  072B  2F2D               	goto	u1141
+  1365  072C  2F2E               	goto	u1140
+  1366  072D                     u1141:
+  1367  072D  2F54               	goto	l30000745
+  1368  072E                     u1140:
+  1369                           	
+  1370  072E                     l30000739:	
+  1371                           	line	129
+  1372                           ;IRtransmitter.c: 129: UART_Init(4800);
+  1373  072E  3000               	movlw	0
+  1374  072F  00B7               	movwf	(?_UART_Init+3)
+  1375  0730  3000               	movlw	0
+  1376  0731  00B6               	movwf	(?_UART_Init+2)
+  1377  0732  3012               	movlw	012h
+  1378  0733  00B5               	movwf	(?_UART_Init+1)
+  1379  0734  30C0               	movlw	0C0h
+  1380  0735  00B4               	movwf	(?_UART_Init)
+  1381                           
+  1382  0736  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1383                           	
+  1384  073B                     l30000740:	
+  1385                           	line	130
+  1386                           ;IRtransmitter.c: 130: CCPR1L = 0b00001100 ;
+  1387  073B  300C               	movlw	(0Ch)
+  1388  073C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1389  073D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1390  073E  0095               	movwf	(21)	;volatile
+  1391                           	
+  1392  073F                     l30000741:	
+  1393                           	line	131
+  1394                           ;IRtransmitter.c: 131: UART_Write('H');
+  1395  073F  3048               	movlw	(048h)
+  1396  0740  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1397                           	
+  1398  0745                     l30000742:	
+  1399                           	line	133
+  1400                           ;IRtransmitter.c: 133: while(RB1==0);
+  1401  0745  1283               	bcf	status, 5	;RP0=0, select bank0
+  1402  0746  1303               	bcf	status, 6	;RP1=0, select bank0
+  1403  0747  1C86               	btfss	(49/8),(49)&7
+  1404  0748  2F4A               	goto	u1151
+  1405  0749  2F4B               	goto	u1150
+  1406  074A                     u1151:
+  1407  074A  2F45               	goto	l30000742
+  1408  074B                     u1150:
+  1409                           	
+  1410  074B                     l30000743:	
+  1411                           	line	134
+  1412                           ;IRtransmitter.c: 134: UART_Stop();
+  1413  074B  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1414                           	
+  1415  0750                     l30000744:	
+  1416                           	line	135
+  1417                           ;IRtransmitter.c: 135: CCPR1L = 0b00011001 ;
+  1418  0750  3019               	movlw	(019h)
+  1419  0751  1283               	bcf	status, 5	;RP0=0, select bank0
+  1420  0752  1303               	bcf	status, 6	;RP1=0, select bank0
+  1421  0753  0095               	movwf	(21)	;volatile
+  1422                           	
+  1423  0754                     l30000745:	
+  1424                           	line	138
+  1425                           ;IRtransmitter.c: 137: }
+  1426                           ;IRtransmitter.c: 138: if(RB5==0){
+  1427  0754  1A86               	btfsc	(53/8),(53)&7
+  1428  0755  2F57               	goto	u1161
+  1429  0756  2F58               	goto	u1160
+  1430  0757                     u1161:
+  1431  0757  2F7E               	goto	l30000752
+  1432  0758                     u1160:
+  1433                           	
+  1434  0758                     l30000746:	
+  1435                           	line	140
+  1436                           ;IRtransmitter.c: 140: UART_Init(4800);
+  1437  0758  3000               	movlw	0
+  1438  0759  00B7               	movwf	(?_UART_Init+3)
+  1439  075A  3000               	movlw	0
+  1440  075B  00B6               	movwf	(?_UART_Init+2)
+  1441  075C  3012               	movlw	012h
+  1442  075D  00B5               	movwf	(?_UART_Init+1)
+  1443  075E  30C0               	movlw	0C0h
+  1444  075F  00B4               	movwf	(?_UART_Init)
+  1445                           
+  1446  0760  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1447                           	
+  1448  0765                     l30000747:	
+  1449                           	line	141
+  1450                           ;IRtransmitter.c: 141: CCPR1L = 0b00001100 ;
+  1451  0765  300C               	movlw	(0Ch)
+  1452  0766  1283               	bcf	status, 5	;RP0=0, select bank0
+  1453  0767  1303               	bcf	status, 6	;RP1=0, select bank0
+  1454  0768  0095               	movwf	(21)	;volatile
+  1455                           	
+  1456  0769                     l30000748:	
+  1457                           	line	142
+  1458                           ;IRtransmitter.c: 142: UART_Write('I');
+  1459  0769  3049               	movlw	(049h)
+  1460  076A  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1461                           	
+  1462  076F                     l30000749:	
+  1463                           	line	144
+  1464                           ;IRtransmitter.c: 144: while(RB5==0);
+  1465  076F  1283               	bcf	status, 5	;RP0=0, select bank0
+  1466  0770  1303               	bcf	status, 6	;RP1=0, select bank0
+  1467  0771  1E86               	btfss	(53/8),(53)&7
+  1468  0772  2F74               	goto	u1171
+  1469  0773  2F75               	goto	u1170
+  1470  0774                     u1171:
+  1471  0774  2F6F               	goto	l30000749
+  1472  0775                     u1170:
+  1473                           	
+  1474  0775                     l30000750:	
+  1475                           	line	145
+  1476                           ;IRtransmitter.c: 145: UART_Stop();
+  1477  0775  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1478                           	
+  1479  077A                     l30000751:	
+  1480                           	line	146
+  1481                           ;IRtransmitter.c: 146: CCPR1L = 0b00011001 ;
+  1482  077A  3019               	movlw	(019h)
+  1483  077B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1484  077C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1485  077D  0095               	movwf	(21)	;volatile
+  1486                           	
+  1487  077E                     l30000752:	
+  1488                           	line	149
+  1489                           ;IRtransmitter.c: 148: }
+  1490                           ;IRtransmitter.c: 149: if(RC1==0){
+  1491  077E  1887               	btfsc	(57/8),(57)&7
+  1492  077F  2F81               	goto	u1181
+  1493  0780  2F82               	goto	u1180
+  1494  0781                     u1181:
+  1495  0781  2FA8               	goto	l30000759
+  1496  0782                     u1180:
+  1497                           	
+  1498  0782                     l30000753:	
+  1499                           	line	150
+  1500                           ;IRtransmitter.c: 150: UART_Init(4800);
+  1501  0782  3000               	movlw	0
+  1502  0783  00B7               	movwf	(?_UART_Init+3)
+  1503  0784  3000               	movlw	0
+  1504  0785  00B6               	movwf	(?_UART_Init+2)
+  1505  0786  3012               	movlw	012h
+  1506  0787  00B5               	movwf	(?_UART_Init+1)
+  1507  0788  30C0               	movlw	0C0h
+  1508  0789  00B4               	movwf	(?_UART_Init)
+  1509                           
+  1510  078A  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1511                           	
+  1512  078F                     l30000754:	
+  1513                           	line	151
+  1514                           ;IRtransmitter.c: 151: CCPR1L = 0b00001100 ;
+  1515  078F  300C               	movlw	(0Ch)
+  1516  0790  1283               	bcf	status, 5	;RP0=0, select bank0
+  1517  0791  1303               	bcf	status, 6	;RP1=0, select bank0
+  1518  0792  0095               	movwf	(21)	;volatile
+  1519                           	
+  1520  0793                     l30000755:	
+  1521                           	line	152
+  1522                           ;IRtransmitter.c: 152: UART_Write('J');
+  1523  0793  304A               	movlw	(04Ah)
+  1524  0794  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1525                           	
+  1526  0799                     l30000756:	
+  1527                           	line	154
+  1528                           ;IRtransmitter.c: 154: while(RC1==0);
+  1529  0799  1283               	bcf	status, 5	;RP0=0, select bank0
+  1530  079A  1303               	bcf	status, 6	;RP1=0, select bank0
+  1531  079B  1C87               	btfss	(57/8),(57)&7
+  1532  079C  2F9E               	goto	u1191
+  1533  079D  2F9F               	goto	u1190
+  1534  079E                     u1191:
+  1535  079E  2F99               	goto	l30000756
+  1536  079F                     u1190:
+  1537                           	
+  1538  079F                     l30000757:	
+  1539                           	line	155
+  1540                           ;IRtransmitter.c: 155: UART_Stop();
+  1541  079F  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1542                           	
+  1543  07A4                     l30000758:	
+  1544                           	line	156
+  1545                           ;IRtransmitter.c: 156: CCPR1L = 0b00011001 ;
+  1546  07A4  3019               	movlw	(019h)
+  1547  07A5  1283               	bcf	status, 5	;RP0=0, select bank0
+  1548  07A6  1303               	bcf	status, 6	;RP1=0, select bank0
+  1549  07A7  0095               	movwf	(21)	;volatile
+  1550                           	
+  1551  07A8                     l30000759:	
+  1552                           	line	159
+  1553                           ;IRtransmitter.c: 158: }
+  1554                           ;IRtransmitter.c: 159: if(RB4==0){
+  1555  07A8  1A06               	btfsc	(52/8),(52)&7
+  1556  07A9  2FAB               	goto	u1201
+  1557  07AA  2FAC               	goto	u1200
+  1558  07AB                     u1201:
+  1559  07AB  2FD2               	goto	l30000766
+  1560  07AC                     u1200:
+  1561                           	
+  1562  07AC                     l30000760:	
+  1563                           	line	160
+  1564                           ;IRtransmitter.c: 160: UART_Init(4800);
+  1565  07AC  3000               	movlw	0
+  1566  07AD  00B7               	movwf	(?_UART_Init+3)
+  1567  07AE  3000               	movlw	0
+  1568  07AF  00B6               	movwf	(?_UART_Init+2)
+  1569  07B0  3012               	movlw	012h
+  1570  07B1  00B5               	movwf	(?_UART_Init+1)
+  1571  07B2  30C0               	movlw	0C0h
+  1572  07B3  00B4               	movwf	(?_UART_Init)
+  1573                           
+  1574  07B4  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1575                           	
+  1576  07B9                     l30000761:	
+  1577                           	line	161
+  1578                           ;IRtransmitter.c: 161: CCPR1L = 0b00001100 ;
+  1579  07B9  300C               	movlw	(0Ch)
+  1580  07BA  1283               	bcf	status, 5	;RP0=0, select bank0
+  1581  07BB  1303               	bcf	status, 6	;RP1=0, select bank0
+  1582  07BC  0095               	movwf	(21)	;volatile
+  1583                           	
+  1584  07BD                     l30000762:	
+  1585                           	line	162
+  1586                           ;IRtransmitter.c: 162: UART_Write('L');
+  1587  07BD  304C               	movlw	(04Ch)
+  1588  07BE  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1589                           	
+  1590  07C3                     l30000763:	
+  1591                           	line	164
+  1592                           ;IRtransmitter.c: 164: while(RB4==0);
+  1593  07C3  1283               	bcf	status, 5	;RP0=0, select bank0
+  1594  07C4  1303               	bcf	status, 6	;RP1=0, select bank0
+  1595  07C5  1E06               	btfss	(52/8),(52)&7
+  1596  07C6  2FC8               	goto	u1211
+  1597  07C7  2FC9               	goto	u1210
+  1598  07C8                     u1211:
+  1599  07C8  2FC3               	goto	l30000763
+  1600  07C9                     u1210:
+  1601                           	
+  1602  07C9                     l30000764:	
+  1603                           	line	165
+  1604                           ;IRtransmitter.c: 165: UART_Stop();
+  1605  07C9  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1606                           	
+  1607  07CE                     l30000765:	
+  1608                           	line	166
+  1609                           ;IRtransmitter.c: 166: CCPR1L = 0b00011001 ;
+  1610  07CE  3019               	movlw	(019h)
+  1611  07CF  1283               	bcf	status, 5	;RP0=0, select bank0
+  1612  07D0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1613  07D1  0095               	movwf	(21)	;volatile
+  1614                           	
+  1615  07D2                     l30000766:	
+  1616                           	line	169
+  1617                           ;IRtransmitter.c: 168: }
+  1618                           ;IRtransmitter.c: 169: if(RC3==0){
+  1619  07D2  1987               	btfsc	(59/8),(59)&7
+  1620  07D3  2FD5               	goto	u1221
+  1621  07D4  2FD6               	goto	u1220
+  1622  07D5                     u1221:
+  1623  07D5  2DDA               	goto	l30000682
+  1624  07D6                     u1220:
+  1625                           	
+  1626  07D6                     l30000767:	
+  1627                           	line	170
+  1628                           ;IRtransmitter.c: 170: UART_Init(4800);
+  1629  07D6  3000               	movlw	0
+  1630  07D7  00B7               	movwf	(?_UART_Init+3)
+  1631  07D8  3000               	movlw	0
+  1632  07D9  00B6               	movwf	(?_UART_Init+2)
+  1633  07DA  3012               	movlw	012h
+  1634  07DB  00B5               	movwf	(?_UART_Init+1)
+  1635  07DC  30C0               	movlw	0C0h
+  1636  07DD  00B4               	movwf	(?_UART_Init)
+  1637                           
+  1638  07DE  120A  118A  24CD   	fcall	_UART_Init
+              120A  118A         
+  1639                           	
+  1640  07E3                     l30000768:	
+  1641                           	line	171
+  1642                           ;IRtransmitter.c: 171: CCPR1L = 0b00001100 ;
+  1643  07E3  300C               	movlw	(0Ch)
+  1644  07E4  1283               	bcf	status, 5	;RP0=0, select bank0
+  1645  07E5  1303               	bcf	status, 6	;RP1=0, select bank0
+  1646  07E6  0095               	movwf	(21)	;volatile
+  1647                           	
+  1648  07E7                     l30000769:	
+  1649                           	line	172
+  1650                           ;IRtransmitter.c: 172: UART_Write('M');
+  1651  07E7  304D               	movlw	(04Dh)
+  1652  07E8  120A  118A  241F   	fcall	_UART_Write
+              120A  118A         
+  1653                           	
+  1654  07ED                     l30000770:	
+  1655                           	line	174
+  1656                           ;IRtransmitter.c: 174: while(RC3==0);
+  1657  07ED  1283               	bcf	status, 5	;RP0=0, select bank0
+  1658  07EE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1659  07EF  1D87               	btfss	(59/8),(59)&7
+  1660  07F0  2FF2               	goto	u1231
+  1661  07F1  2FF3               	goto	u1230
+  1662  07F2                     u1231:
+  1663  07F2  2FED               	goto	l30000770
+  1664  07F3                     u1230:
+  1665                           	
+  1666  07F3                     l30000771:	
+  1667                           	line	175
+  1668                           ;IRtransmitter.c: 175: UART_Stop();
+  1669  07F3  120A  118A  2414   	fcall	_UART_Stop
+              120A  118A         
+  1670                           	
+  1671  07F8                     l30000772:	
+  1672                           	line	176
+  1673                           ;IRtransmitter.c: 176: CCPR1L = 0b00011001 ;
+  1674  07F8  3019               	movlw	(019h)
+  1675  07F9  1283               	bcf	status, 5	;RP0=0, select bank0
+  1676  07FA  1303               	bcf	status, 6	;RP1=0, select bank0
+  1677  07FB  0095               	movwf	(21)	;volatile
+  1678  07FC  2DDA               	goto	l30000682
+  1679                           	global	start
+  1680  07FD  120A  118A  2800   	ljmp	start
+  1681                           	opt stack 0
+  1682                           GLOBAL	__end_of_main
+  1683  0800                     	__end_of_main:
+  1684                           ; =============== function _main ends ============
+  1685                           
+  1686                           psect	maintext
+  1687                           	line	180
+  1688                           	signat	_main,88
+  1689                           	global	_UART_Write
+  1690                           psect	text42,local,class=CODE,delta=2
+  1691                           global __ptext42
+  1692  041F                     __ptext42:
+  1693                           
+  1694                           ; *************** function _UART_Write *****************
+  1695                           ; Defined at:
+  1696                           ;		line 48 in file "C:\Users\LENOVO\Desktop\IRtransmitter\uart.h"
+  1697                           ; Parameters:    Size  Location     Type
+  1698                           ;  data            1    wreg     unsigned char 
+  1699                           ; Auto vars:     Size  Location     Type
+  1700                           ;  data            1    0[COMMON] unsigned char 
+  1701                           ; Return value:  Size  Location     Type
+  1702                           ;		None               void
+  1703                           ; Registers used:
+  1704                           ;		wreg
+  1705                           ; Tracked objects:
+  1706                           ;		On entry : 0/0
+  1707                           ;		On exit  : 0/0
+  1708                           ;		Unchanged: 0/0
+  1709                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1710                           ;      Locals:         1       0       0       0       0
+  1711                           ;      Temp:     0
+  1712                           ;      Total:    1
+  1713                           ; This function calls:
+  1714                           ;		Nothing
+  1715                           ; This function is called by:
+  1716                           ;		_main
+  1717                           ; This function uses a non-reentrant model
+  1718                           ; 
+  1719                           psect	text42
+  1720                           	file	"C:\Users\LENOVO\Desktop\IRtransmitter\uart.h"
+  1721                           	line	48
+  1722                           	global	__size_of_UART_Write
+  1723  000C                     	__size_of_UART_Write	equ	__end_of_UART_Write-_UART_Write
+  1724                           ;uart.h: 47: void UART_Write(char data)
+  1725                           ;uart.h: 48: {
+  1726                           	
+  1727  041F                     _UART_Write:	
+  1728                           	opt stack 7
+  1729                           ; Regs used in _UART_Write: [wreg]
+  1730                           ;UART_Write@data stored from wreg
+  1731  041F  00F0               	movwf	(UART_Write@data)
+  1732                           	
+  1733  0420                     l30000405:	
+  1734                           	
+  1735  0420                     l53:	
+  1736                           	line	49
+  1737  0420  1683               	bsf	status, 5	;RP0=1, select bank1
+  1738  0421  1303               	bcf	status, 6	;RP1=0, select bank1
+  1739  0422  1C98               	btfss	(1217/8)^080h,(1217)&7
+  1740  0423  2C25               	goto	u91
+  1741  0424  2C26               	goto	u90
+  1742  0425                     u91:
+  1743  0425  2C20               	goto	l53
+  1744  0426                     u90:
+  1745                           	
+  1746  0426                     l30000406:	
+  1747                           	line	50
+  1748                           ;uart.h: 50: TXREG = data;
+  1749  0426  0870               	movf	(UART_Write@data),w
+  1750  0427  1283               	bcf	status, 5	;RP0=0, select bank0
+  1751  0428  1303               	bcf	status, 6	;RP1=0, select bank0
+  1752  0429  0099               	movwf	(25)	;volatile
+  1753                           	
+  1754  042A                     l52:	
+  1755  042A  0008               	return
+  1756                           	opt stack 0
+  1757                           GLOBAL	__end_of_UART_Write
+  1758  042B                     	__end_of_UART_Write:
+  1759                           ; =============== function _UART_Write ends ============
+  1760                           
+  1761                           psect	text43,local,class=CODE,delta=2
+  1762                           global __ptext43
+  1763  0414                     __ptext43:
+  1764                           	line	51
+  1765                           	signat	_UART_Write,4216
+  1766                           	global	_UART_Stop
+  1767                           
+  1768                           ; *************** function _UART_Stop *****************
+  1769                           ; Defined at:
+  1770                           ;		line 28 in file "C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+  1771                           ; Parameters:    Size  Location     Type
+  1772                           ;		None
+  1773                           ; Auto vars:     Size  Location     Type
+  1774                           ;		None
+  1775                           ; Return value:  Size  Location     Type
+  1776                           ;		None               void
+  1777                           ; Registers used:
+  1778                           ;		None
+  1779                           ; Tracked objects:
+  1780                           ;		On entry : 0/0
+  1781                           ;		On exit  : 0/0
+  1782                           ;		Unchanged: 0/0
+  1783                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1784                           ;      Locals:         0       0       0       0       0
+  1785                           ;      Temp:     0
+  1786                           ;      Total:    0
+  1787                           ; This function calls:
+  1788                           ;		Nothing
+  1789                           ; This function is called by:
+  1790                           ;		_main
+  1791                           ; This function uses a non-reentrant model
+  1792                           ; 
+  1793                           psect	text43
+  1794                           	file	"C:\Users\LENOVO\Desktop\IRtransmitter\IRtransmitter.c"
+  1795                           	line	28
+  1796                           	global	__size_of_UART_Stop
+  1797  000B                     	__size_of_UART_Stop	equ	__end_of_UART_Stop-_UART_Stop
+  1798                           ;IRtransmitter.c: 5: asm("\tpsect config,class=CONFIG,delta=2"); asm("\tdw ""0x3F32");
+  1799                           ;IRtransmitter.c: 27: void UART_Stop()
+  1800                           ;IRtransmitter.c: 28: {
+  1801                           	
+  1802  0414                     _UART_Stop:	
+  1803                           	opt stack 7
+  1804                           ; Regs used in _UART_Stop: []
+  1805                           	line	29
+  1806                           	
+  1807  0414                     l30000407:	
+  1808                           ;IRtransmitter.c: 29: TXEN=0 ;CREN=0; SPEN=0;TRISC6=0;
+  1809  0414  1683               	bsf	status, 5	;RP0=1, select bank1
+  1810  0415  1303               	bcf	status, 6	;RP1=0, select bank1
+  1811  0416  1298               	bcf	(1221/8)^080h,(1221)&7
+  1812  0417  1283               	bcf	status, 5	;RP0=0, select bank0
+  1813  0418  1303               	bcf	status, 6	;RP1=0, select bank0
+  1814  0419  1218               	bcf	(196/8),(196)&7
+  1815  041A  1398               	bcf	(199/8),(199)&7
+  1816  041B  1683               	bsf	status, 5	;RP0=1, select bank1
+  1817  041C  1303               	bcf	status, 6	;RP1=0, select bank1
+  1818  041D  1307               	bcf	(1086/8)^080h,(1086)&7
+  1819                           	
+  1820  041E                     l61:	
+  1821  041E  0008               	return
+  1822                           	opt stack 0
+  1823                           GLOBAL	__end_of_UART_Stop
+  1824  041F                     	__end_of_UART_Stop:
+  1825                           ; =============== function _UART_Stop ends ============
+  1826                           
+  1827                           psect	text44,local,class=CODE,delta=2
+  1828                           global __ptext44
+  1829  04CD                     __ptext44:
+  1830                           	line	30
+  1831                           	signat	_UART_Stop,88
+  1832                           	global	_UART_Init
+  1833                           
+  1834                           ; *************** function _UART_Init *****************
+  1835                           ; Defined at:
+  1836                           ;		line 2 in file "C:\Users\LENOVO\Desktop\IRtransmitter\uart.h"
+  1837                           ; Parameters:    Size  Location     Type
+  1838                           ;  baudrate        4   20[BANK0 ] const long 
+  1839                           ; Auto vars:     Size  Location     Type
+  1840                           ;  x               2    7[COMMON] unsigned int 
+  1841                           ; Return value:  Size  Location     Type
+  1842                           ;                  1    wreg      unsigned char 
+  1843                           ; Registers used:
+  1844                           ;		wreg, status,2, status,0, pclath, cstack
+  1845                           ; Tracked objects:
+  1846                           ;		On entry : 0/0
+  1847                           ;		On exit  : 0/0
+  1848                           ;		Unchanged: 0/0
+  1849                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1850                           ;      Locals:         2      16       0       0       0
+  1851                           ;      Temp:    12
+  1852                           ;      Total:   18
+  1853                           ; This function calls:
+  1854                           ;		___aldiv
+  1855                           ; This function is called by:
+  1856                           ;		_main
+  1857                           ; This function uses a non-reentrant model
+  1858                           ; 
+  1859                           psect	text44
+  1860                           	file	"C:\Users\LENOVO\Desktop\IRtransmitter\uart.h"
+  1861                           	line	2
+  1862                           	global	__size_of_UART_Init
+  1863  00F4                     	__size_of_UART_Init	equ	__end_of_UART_Init-_UART_Init
+  1864                           ;uart.h: 1: char UART_Init(const long int baudrate)
+  1865                           ;uart.h: 2: {
+  1866                           	
+  1867  04CD                     _UART_Init:	
+  1868                           	opt stack 7
+  1869                           ; Regs used in _UART_Init: [wreg+status,2+status,0+pclath+cstack]
+  1870                           	line	4
+  1871                           	
+  1872  04CD                     l30000663:	
+  1873                           ;uart.h: 3: unsigned int x;
+  1874                           ;uart.h: 4: x = (4000000 - baudrate*64)/(baudrate*64);
+  1875  04CD  3000               	movlw	low(03D0900h)
+  1876  04CE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1877  04CF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1878  04D0  00A8               	movwf	(??_UART_Init+0+0)
+  1879  04D1  3009               	movlw	high(03D0900h)
+  1880  04D2  00A9               	movwf	(??_UART_Init+0+0+1)
+  1881  04D3  303D               	movlw	low highword(03D0900h)
+  1882  04D4  00AA               	movwf	(??_UART_Init+0+0+2)
+  1883  04D5  3000               	movlw	high highword(03D0900h)
+  1884  04D6  00AB               	movwf	(??_UART_Init+0+0+3)
+  1885  04D7  0834               	movf	(UART_Init@baudrate),w
+  1886  04D8  00AC               	movwf	(??_UART_Init+4+0)
+  1887  04D9  0835               	movf	(UART_Init@baudrate+1),w
+  1888  04DA  00AD               	movwf	(??_UART_Init+4+0+1)
+  1889  04DB  0836               	movf	(UART_Init@baudrate+2),w
+  1890  04DC  00AE               	movwf	(??_UART_Init+4+0+2)
+  1891  04DD  0837               	movf	(UART_Init@baudrate+3),w
+  1892  04DE  00AF               	movwf	(??_UART_Init+4+0+3)
+  1893  04DF  3006               	movlw	06h
+  1894  04E0                     u905:
+  1895  04E0  1003               	clrc
+  1896  04E1  0DAC               	rlf	(??_UART_Init+4+0),f
+  1897  04E2  0DAD               	rlf	(??_UART_Init+4+1),f
+  1898  04E3  0DAE               	rlf	(??_UART_Init+4+2),f
+  1899  04E4  0DAF               	rlf	(??_UART_Init+4+3),f
+  1900  04E5                     u900:
+  1901  04E5  3EFF               	addlw	-1
+  1902  04E6  1D03               	skipz
+  1903  04E7  2CE0               	goto	u905
+  1904  04E8  09AC               	comf	(??_UART_Init+4+0),f
+  1905  04E9  09AD               	comf	(??_UART_Init+4+1),f
+  1906  04EA  09AE               	comf	(??_UART_Init+4+2),f
+  1907  04EB  09AF               	comf	(??_UART_Init+4+3),f
+  1908  04EC  0AAC               	incf	(??_UART_Init+4+0),f
+  1909  04ED  1903               	skipnz
+  1910  04EE  0AAD               	incf	(??_UART_Init+4+1),f
+  1911  04EF  1903               	skipnz
+  1912  04F0  0AAE               	incf	(??_UART_Init+4+2),f
+  1913  04F1  1903               	skipnz
+  1914  04F2  0AAF               	incf	(??_UART_Init+4+3),f
+  1915  04F3  082C               	movf	0+(??_UART_Init+4+0),w
+  1916  04F4  07A8               	addwf	(??_UART_Init+0+0),f
+  1917  04F5  082D               	movf	1+(??_UART_Init+4+0),w
+  1918  04F6  1803               	skipnc
+  1919  04F7  0F2D               	incfsz	1+(??_UART_Init+4+0),w
+  1920  04F8  2CFA               	goto	u910
+  1921  04F9  2CFB               	goto	u911
+  1922  04FA                     u910:
+  1923  04FA  07A9               	addwf	(??_UART_Init+0+1),f
+  1924  04FB                     u911:
+  1925  04FB  082E               	movf	2+(??_UART_Init+4+0),w
+  1926  04FC  1803               	skipnc
+  1927  04FD  0F2E               	incfsz	2+(??_UART_Init+4+0),w
+  1928  04FE  2D00               	goto	u912
+  1929  04FF  2D01               	goto	u913
+  1930  0500                     u912:
+  1931  0500  07AA               	addwf	(??_UART_Init+0+2),f
+  1932  0501                     u913:
+  1933  0501  082F               	movf	3+(??_UART_Init+4+0),w
+  1934  0502  1803               	skipnc
+  1935  0503  0A2F               	incf	3+(??_UART_Init+4+0),w
+  1936  0504  07AB               	addwf	(??_UART_Init+0+3),f
+  1937  0505  082B               	movf	3+(??_UART_Init+0+0),w
+  1938  0506  00A3               	movwf	(?___aldiv+3)
+  1939  0507  082A               	movf	2+(??_UART_Init+0+0),w
+  1940  0508  00A2               	movwf	(?___aldiv+2)
+  1941  0509  0829               	movf	1+(??_UART_Init+0+0),w
+  1942  050A  00A1               	movwf	(?___aldiv+1)
+  1943  050B  0828               	movf	0+(??_UART_Init+0+0),w
+  1944  050C  00A0               	movwf	(?___aldiv)
+  1945                           
+  1946  050D  0834               	movf	(UART_Init@baudrate),w
+  1947  050E  00B0               	movwf	(??_UART_Init+8+0)
+  1948  050F  0835               	movf	(UART_Init@baudrate+1),w
+  1949  0510  00B1               	movwf	(??_UART_Init+8+0+1)
+  1950  0511  0836               	movf	(UART_Init@baudrate+2),w
+  1951  0512  00B2               	movwf	(??_UART_Init+8+0+2)
+  1952  0513  0837               	movf	(UART_Init@baudrate+3),w
+  1953  0514  00B3               	movwf	(??_UART_Init+8+0+3)
+  1954  0515  3006               	movlw	06h
+  1955  0516                     u925:
+  1956  0516  1003               	clrc
+  1957  0517  0DB0               	rlf	(??_UART_Init+8+0),f
+  1958  0518  0DB1               	rlf	(??_UART_Init+8+1),f
+  1959  0519  0DB2               	rlf	(??_UART_Init+8+2),f
+  1960  051A  0DB3               	rlf	(??_UART_Init+8+3),f
+  1961  051B                     u920:
+  1962  051B  3EFF               	addlw	-1
+  1963  051C  1D03               	skipz
+  1964  051D  2D16               	goto	u925
+  1965  051E  0833               	movf	3+(??_UART_Init+8+0),w
+  1966  051F  00A7               	movwf	3+(?___aldiv)+04h
+  1967  0520  0832               	movf	2+(??_UART_Init+8+0),w
+  1968  0521  00A6               	movwf	2+(?___aldiv)+04h
+  1969  0522  0831               	movf	1+(??_UART_Init+8+0),w
+  1970  0523  00A5               	movwf	1+(?___aldiv)+04h
+  1971  0524  0830               	movf	0+(??_UART_Init+8+0),w
+  1972  0525  00A4               	movwf	0+(?___aldiv)+04h
+  1973                           
+  1974  0526  120A  118A  242B   	fcall	___aldiv
+              120A  118A         
+  1975  052B  1383               	bcf	status, 7	;select IRP bank0
+  1976  052C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1977  052D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1978  052E  0821               	movf	(1+(?___aldiv)),w
+  1979  052F  01F8               	clrf	(UART_Init@x+1)
+  1980  0530  07F8               	addwf	(UART_Init@x+1)
+  1981  0531  0820               	movf	(0+(?___aldiv)),w
+  1982  0532  01F7               	clrf	(UART_Init@x)
+  1983  0533  07F7               	addwf	(UART_Init@x)
+  1984                           
+  1985                           	
+  1986  0534                     l30000664:	
+  1987                           	line	5
+  1988                           ;uart.h: 5: if(x>255)
+  1989  0534  3001               	movlw	high(0100h)
+  1990  0535  0278               	subwf	(UART_Init@x+1),w
+  1991  0536  3000               	movlw	low(0100h)
+  1992  0537  1903               	skipnz
+  1993  0538  0277               	subwf	(UART_Init@x),w
+  1994  0539  1C03               	skipc
+  1995  053A  2D3C               	goto	u931
+  1996  053B  2D3D               	goto	u930
+  1997  053C                     u931:
+  1998  053C  2DA5               	goto	l30000667
+  1999  053D                     u930:
+  2000                           	
+  2001  053D                     l30000665:	
+  2002                           	line	7
+  2003                           ;uart.h: 6: {
+  2004                           ;uart.h: 7: x = (4000000 - baudrate*16)/(baudrate*16);
+  2005  053D  3000               	movlw	low(03D0900h)
+  2006  053E  00A8               	movwf	(??_UART_Init+0+0)
+  2007  053F  3009               	movlw	high(03D0900h)
+  2008  0540  00A9               	movwf	(??_UART_Init+0+0+1)
+  2009  0541  303D               	movlw	low highword(03D0900h)
+  2010  0542  00AA               	movwf	(??_UART_Init+0+0+2)
+  2011  0543  3000               	movlw	high highword(03D0900h)
+  2012  0544  00AB               	movwf	(??_UART_Init+0+0+3)
+  2013  0545  0834               	movf	(UART_Init@baudrate),w
+  2014  0546  00AC               	movwf	(??_UART_Init+4+0)
+  2015  0547  0835               	movf	(UART_Init@baudrate+1),w
+  2016  0548  00AD               	movwf	(??_UART_Init+4+0+1)
+  2017  0549  0836               	movf	(UART_Init@baudrate+2),w
+  2018  054A  00AE               	movwf	(??_UART_Init+4+0+2)
+  2019  054B  0837               	movf	(UART_Init@baudrate+3),w
+  2020  054C  00AF               	movwf	(??_UART_Init+4+0+3)
+  2021  054D  3004               	movlw	04h
+  2022  054E                     u945:
+  2023  054E  1003               	clrc
+  2024  054F  0DAC               	rlf	(??_UART_Init+4+0),f
+  2025  0550  0DAD               	rlf	(??_UART_Init+4+1),f
+  2026  0551  0DAE               	rlf	(??_UART_Init+4+2),f
+  2027  0552  0DAF               	rlf	(??_UART_Init+4+3),f
+  2028  0553                     u940:
+  2029  0553  3EFF               	addlw	-1
+  2030  0554  1D03               	skipz
+  2031  0555  2D4E               	goto	u945
+  2032  0556  09AC               	comf	(??_UART_Init+4+0),f
+  2033  0557  09AD               	comf	(??_UART_Init+4+1),f
+  2034  0558  09AE               	comf	(??_UART_Init+4+2),f
+  2035  0559  09AF               	comf	(??_UART_Init+4+3),f
+  2036  055A  0AAC               	incf	(??_UART_Init+4+0),f
+  2037  055B  1903               	skipnz
+  2038  055C  0AAD               	incf	(??_UART_Init+4+1),f
+  2039  055D  1903               	skipnz
+  2040  055E  0AAE               	incf	(??_UART_Init+4+2),f
+  2041  055F  1903               	skipnz
+  2042  0560  0AAF               	incf	(??_UART_Init+4+3),f
+  2043  0561  082C               	movf	0+(??_UART_Init+4+0),w
+  2044  0562  07A8               	addwf	(??_UART_Init+0+0),f
+  2045  0563  082D               	movf	1+(??_UART_Init+4+0),w
+  2046  0564  1803               	skipnc
+  2047  0565  0F2D               	incfsz	1+(??_UART_Init+4+0),w
+  2048  0566  2D68               	goto	u950
+  2049  0567  2D69               	goto	u951
+  2050  0568                     u950:
+  2051  0568  07A9               	addwf	(??_UART_Init+0+1),f
+  2052  0569                     u951:
+  2053  0569  082E               	movf	2+(??_UART_Init+4+0),w
+  2054  056A  1803               	skipnc
+  2055  056B  0F2E               	incfsz	2+(??_UART_Init+4+0),w
+  2056  056C  2D6E               	goto	u952
+  2057  056D  2D6F               	goto	u953
+  2058  056E                     u952:
+  2059  056E  07AA               	addwf	(??_UART_Init+0+2),f
+  2060  056F                     u953:
+  2061  056F  082F               	movf	3+(??_UART_Init+4+0),w
+  2062  0570  1803               	skipnc
+  2063  0571  0A2F               	incf	3+(??_UART_Init+4+0),w
+  2064  0572  07AB               	addwf	(??_UART_Init+0+3),f
+  2065  0573  082B               	movf	3+(??_UART_Init+0+0),w
+  2066  0574  00A3               	movwf	(?___aldiv+3)
+  2067  0575  082A               	movf	2+(??_UART_Init+0+0),w
+  2068  0576  00A2               	movwf	(?___aldiv+2)
+  2069  0577  0829               	movf	1+(??_UART_Init+0+0),w
+  2070  0578  00A1               	movwf	(?___aldiv+1)
+  2071  0579  0828               	movf	0+(??_UART_Init+0+0),w
+  2072  057A  00A0               	movwf	(?___aldiv)
+  2073                           
+  2074  057B  0834               	movf	(UART_Init@baudrate),w
+  2075  057C  00B0               	movwf	(??_UART_Init+8+0)
+  2076  057D  0835               	movf	(UART_Init@baudrate+1),w
+  2077  057E  00B1               	movwf	(??_UART_Init+8+0+1)
+  2078  057F  0836               	movf	(UART_Init@baudrate+2),w
+  2079  0580  00B2               	movwf	(??_UART_Init+8+0+2)
+  2080  0581  0837               	movf	(UART_Init@baudrate+3),w
+  2081  0582  00B3               	movwf	(??_UART_Init+8+0+3)
+  2082  0583  3004               	movlw	04h
+  2083  0584                     u965:
+  2084  0584  1003               	clrc
+  2085  0585  0DB0               	rlf	(??_UART_Init+8+0),f
+  2086  0586  0DB1               	rlf	(??_UART_Init+8+1),f
+  2087  0587  0DB2               	rlf	(??_UART_Init+8+2),f
+  2088  0588  0DB3               	rlf	(??_UART_Init+8+3),f
+  2089  0589                     u960:
+  2090  0589  3EFF               	addlw	-1
+  2091  058A  1D03               	skipz
+  2092  058B  2D84               	goto	u965
+  2093  058C  0833               	movf	3+(??_UART_Init+8+0),w
+  2094  058D  00A7               	movwf	3+(?___aldiv)+04h
+  2095  058E  0832               	movf	2+(??_UART_Init+8+0),w
+  2096  058F  00A6               	movwf	2+(?___aldiv)+04h
+  2097  0590  0831               	movf	1+(??_UART_Init+8+0),w
+  2098  0591  00A5               	movwf	1+(?___aldiv)+04h
+  2099  0592  0830               	movf	0+(??_UART_Init+8+0),w
+  2100  0593  00A4               	movwf	0+(?___aldiv)+04h
+  2101                           
+  2102  0594  120A  118A  242B   	fcall	___aldiv
+              120A  118A         
+  2103  0599  1383               	bcf	status, 7	;select IRP bank0
+  2104  059A  1283               	bcf	status, 5	;RP0=0, select bank0
+  2105  059B  1303               	bcf	status, 6	;RP1=0, select bank0
+  2106  059C  0821               	movf	(1+(?___aldiv)),w
+  2107  059D  01F8               	clrf	(UART_Init@x+1)
+  2108  059E  07F8               	addwf	(UART_Init@x+1)
+  2109  059F  0820               	movf	(0+(?___aldiv)),w
+  2110  05A0  01F7               	clrf	(UART_Init@x)
+  2111  05A1  07F7               	addwf	(UART_Init@x)
+  2112                           
+  2113                           	
+  2114  05A2                     l30000666:	
+  2115                           	line	8
+  2116                           ;uart.h: 8: BRGH = 1;
+  2117  05A2  1683               	bsf	status, 5	;RP0=1, select bank1
+  2118  05A3  1303               	bcf	status, 6	;RP1=0, select bank1
+  2119  05A4  1518               	bsf	(1218/8)^080h,(1218)&7
+  2120                           	
+  2121  05A5                     l30000667:	
+  2122                           	line	10
+  2123                           ;uart.h: 9: }
+  2124                           ;uart.h: 10: if(x<256)
+  2125  05A5  3001               	movlw	high(0100h)
+  2126  05A6  0278               	subwf	(UART_Init@x+1),w
+  2127  05A7  3000               	movlw	low(0100h)
+  2128  05A8  1903               	skipnz
+  2129  05A9  0277               	subwf	(UART_Init@x),w
+  2130  05AA  1803               	skipnc
+  2131  05AB  2DAD               	goto	u971
+  2132  05AC  2DAE               	goto	u970
+  2133  05AD                     u971:
+  2134  05AD  2DC0               	goto	l38
+  2135  05AE                     u970:
+  2136                           	
+  2137  05AE                     l30000668:	
+  2138                           	line	12
+  2139                           ;uart.h: 11: {
+  2140                           ;uart.h: 12: SPBRG = x;
+  2141  05AE  0877               	movf	(UART_Init@x),w
+  2142  05AF  1683               	bsf	status, 5	;RP0=1, select bank1
+  2143  05B0  1303               	bcf	status, 6	;RP1=0, select bank1
+  2144  05B1  0099               	movwf	(153)^080h	;volatile
+  2145                           	
+  2146  05B2                     l30000669:	
+  2147                           	line	13
+  2148                           ;uart.h: 13: SYNC = 0;
+  2149  05B2  1218               	bcf	(1220/8)^080h,(1220)&7
+  2150                           	
+  2151  05B3                     l30000670:	
+  2152                           	line	14
+  2153                           ;uart.h: 14: SPEN = 1;
+  2154  05B3  1283               	bcf	status, 5	;RP0=0, select bank0
+  2155  05B4  1303               	bcf	status, 6	;RP1=0, select bank0
+  2156  05B5  1798               	bsf	(199/8),(199)&7
+  2157                           	
+  2158  05B6                     l30000671:	
+  2159                           	line	15
+  2160                           ;uart.h: 15: TRISC7 = 1;
+  2161  05B6  1683               	bsf	status, 5	;RP0=1, select bank1
+  2162  05B7  1303               	bcf	status, 6	;RP1=0, select bank1
+  2163  05B8  1787               	bsf	(1087/8)^080h,(1087)&7
+  2164                           	
+  2165  05B9                     l30000672:	
+  2166                           	line	16
+  2167                           ;uart.h: 16: TRISC6 = 1;
+  2168  05B9  1707               	bsf	(1086/8)^080h,(1086)&7
+  2169                           	
+  2170  05BA                     l30000673:	
+  2171                           	line	17
+  2172                           ;uart.h: 17: CREN = 1;
+  2173  05BA  1283               	bcf	status, 5	;RP0=0, select bank0
+  2174  05BB  1303               	bcf	status, 6	;RP1=0, select bank0
+  2175  05BC  1618               	bsf	(196/8),(196)&7
+  2176                           	
+  2177  05BD                     l30000674:	
+  2178                           	line	18
+  2179                           ;uart.h: 18: TXEN = 1;
+  2180  05BD  1683               	bsf	status, 5	;RP0=1, select bank1
+  2181  05BE  1303               	bcf	status, 6	;RP1=0, select bank1
+  2182  05BF  1698               	bsf	(1221/8)^080h,(1221)&7
+  2183                           	
+  2184  05C0                     l38:	
+  2185  05C0  0008               	return
+  2186                           	opt stack 0
+  2187                           GLOBAL	__end_of_UART_Init
+  2188  05C1                     	__end_of_UART_Init:
+  2189                           ; =============== function _UART_Init ends ============
+  2190                           
+  2191                           psect	text45,local,class=CODE,delta=2
+  2192                           global __ptext45
+  2193  042B                     __ptext45:
+  2194                           	line	22
+  2195                           	signat	_UART_Init,4217
+  2196                           	global	___aldiv
+  2197                           
+  2198                           ; *************** function ___aldiv *****************
+  2199                           ; Defined at:
+  2200                           ;		line 5 in file "C:\Program Files\HI-TECH Software\PICC\9.70\sources\aldiv.c"
+  2201                           ; Parameters:    Size  Location     Type
+  2202                           ;  dividend        4    0[BANK0 ] long 
+  2203                           ;  divisor         4    4[BANK0 ] long 
+  2204                           ; Auto vars:     Size  Location     Type
+  2205                           ;  quotient        4    3[COMMON] long 
+  2206                           ;  sign            1    2[COMMON] unsigned char 
+  2207                           ;  counter         1    1[COMMON] unsigned char 
+  2208                           ; Return value:  Size  Location     Type
+  2209                           ;                  4    0[BANK0 ] long 
+  2210                           ; Registers used:
+  2211                           ;		wreg, status,2, status,0
+  2212                           ; Tracked objects:
+  2213                           ;		On entry : 0/0
+  2214                           ;		On exit  : 0/0
+  2215                           ;		Unchanged: 0/0
+  2216                           ; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2217                           ;      Locals:         7       8       0       0       0
+  2218                           ;      Temp:     1
+  2219                           ;      Total:   15
+  2220                           ; This function calls:
+  2221                           ;		Nothing
+  2222                           ; This function is called by:
+  2223                           ;		_UART_Init
+  2224                           ; This function uses a non-reentrant model
+  2225                           ; 
+  2226                           psect	text45
+  2227                           	file	"C:\Program Files\HI-TECH Software\PICC\9.70\sources\aldiv.c"
+  2228                           	line	5
+  2229                           	global	__size_of___aldiv
+  2230  00A2                     	__size_of___aldiv	equ	__end_of___aldiv-___aldiv
+  2231                           	
+  2232  042B                     ___aldiv:	
+  2233                           	opt stack 6
+  2234                           ; Regs used in ___aldiv: [wreg+status,2+status,0]
+  2235                           	line	9
+  2236                           	
+  2237  042B                     l30000773:	
+  2238  042B  1003               	clrc
+  2239  042C  3000               	movlw	0
+  2240  042D  1803               	btfsc	status,0
+  2241  042E  3001               	movlw	1
+  2242  042F  00F2               	movwf	(___aldiv@sign)
+  2243                           	
+  2244  0430                     l30000774:	
+  2245                           	line	10
+  2246  0430  1283               	bcf	status, 5	;RP0=0, select bank0
+  2247  0431  1303               	bcf	status, 6	;RP1=0, select bank0
+  2248  0432  1FA7               	btfss	(___aldiv@divisor+3),7
+  2249  0433  2C35               	goto	u1241
+  2250  0434  2C36               	goto	u1240
+  2251  0435                     u1241:
+  2252  0435  2C44               	goto	l30000777
+  2253  0436                     u1240:
+  2254                           	
+  2255  0436                     l30000775:	
+  2256                           	line	11
+  2257  0436  09A4               	comf	(___aldiv@divisor),f
+  2258  0437  09A5               	comf	(___aldiv@divisor+1),f
+  2259  0438  09A6               	comf	(___aldiv@divisor+2),f
+  2260  0439  09A7               	comf	(___aldiv@divisor+3),f
+  2261  043A  0AA4               	incf	(___aldiv@divisor),f
+  2262  043B  1903               	skipnz
+  2263  043C  0AA5               	incf	(___aldiv@divisor+1),f
+  2264  043D  1903               	skipnz
+  2265  043E  0AA6               	incf	(___aldiv@divisor+2),f
+  2266  043F  1903               	skipnz
+  2267  0440  0AA7               	incf	(___aldiv@divisor+3),f
+  2268                           	
+  2269  0441                     l30000776:	
+  2270                           	line	12
+  2271  0441  01F2               	clrf	(___aldiv@sign)
+  2272  0442  1403               	bsf	status,0
+  2273  0443  0DF2               	rlf	(___aldiv@sign),f
+  2274                           	
+  2275  0444                     l30000777:	
+  2276                           	line	14
+  2277  0444  1FA3               	btfss	(___aldiv@dividend+3),7
+  2278  0445  2C47               	goto	u1251
+  2279  0446  2C48               	goto	u1250
+  2280  0447                     u1251:
+  2281  0447  2C57               	goto	l30000780
+  2282  0448                     u1250:
+  2283                           	
+  2284  0448                     l30000778:	
+  2285                           	line	15
+  2286  0448  09A0               	comf	(___aldiv@dividend),f
+  2287  0449  09A1               	comf	(___aldiv@dividend+1),f
+  2288  044A  09A2               	comf	(___aldiv@dividend+2),f
+  2289  044B  09A3               	comf	(___aldiv@dividend+3),f
+  2290  044C  0AA0               	incf	(___aldiv@dividend),f
+  2291  044D  1903               	skipnz
+  2292  044E  0AA1               	incf	(___aldiv@dividend+1),f
+  2293  044F  1903               	skipnz
+  2294  0450  0AA2               	incf	(___aldiv@dividend+2),f
+  2295  0451  1903               	skipnz
+  2296  0452  0AA3               	incf	(___aldiv@dividend+3),f
+  2297                           	
+  2298  0453                     l30000779:	
+  2299                           	line	16
+  2300  0453  3001               	movlw	(01h)
+  2301  0454  00F0               	movwf	(??___aldiv+0+0)
+  2302  0455  0870               	movf	(??___aldiv+0+0),w
+  2303  0456  06F2               	xorwf	(___aldiv@sign),f
+  2304                           	
+  2305  0457                     l30000780:	
+  2306                           	line	18
+  2307  0457  3000               	movlw	0
+  2308  0458  00F6               	movwf	(___aldiv@quotient+3)
+  2309  0459  3000               	movlw	0
+  2310  045A  00F5               	movwf	(___aldiv@quotient+2)
+  2311  045B  3000               	movlw	0
+  2312  045C  00F4               	movwf	(___aldiv@quotient+1)
+  2313  045D  3000               	movlw	0
+  2314  045E  00F3               	movwf	(___aldiv@quotient)
+  2315                           
+  2316                           	
+  2317  045F                     l30000781:	
+  2318                           	line	19
+  2319  045F  0827               	movf	(___aldiv@divisor+3),w
+  2320  0460  0426               	iorwf	(___aldiv@divisor+2),w
+  2321  0461  0425               	iorwf	(___aldiv@divisor+1),w
+  2322  0462  0424               	iorwf	(___aldiv@divisor),w
+  2323  0463  1903               	skipnz
+  2324  0464  2C66               	goto	u1261
+  2325  0465  2C67               	goto	u1260
+  2326  0466                     u1261:
+  2327  0466  2CB5               	goto	l30000791
+  2328  0467                     u1260:
+  2329                           	
+  2330  0467                     l30000782:	
+  2331                           	line	20
+  2332  0467  01F1               	clrf	(___aldiv@counter)
+  2333  0468  1403               	bsf	status,0
+  2334  0469  0DF1               	rlf	(___aldiv@counter),f
+  2335  046A  2C78               	goto	l30000784
+  2336                           	
+  2337  046B                     l30000783:	
+  2338                           	line	22
+  2339  046B  3001               	movlw	01h
+  2340  046C  00F0               	movwf	(??___aldiv+0+0)
+  2341  046D                     u1275:
+  2342  046D  1003               	clrc
+  2343  046E  0DA4               	rlf	(___aldiv@divisor),f
+  2344  046F  0DA5               	rlf	(___aldiv@divisor+1),f
+  2345  0470  0DA6               	rlf	(___aldiv@divisor+2),f
+  2346  0471  0DA7               	rlf	(___aldiv@divisor+3),f
+  2347  0472  0BF0               	decfsz	(??___aldiv+0+0)
+  2348  0473  2C6D               	goto	u1275
+  2349                           	line	23
+  2350  0474  3001               	movlw	(01h)
+  2351  0475  00F0               	movwf	(??___aldiv+0+0)
+  2352  0476  0870               	movf	(??___aldiv+0+0),w
+  2353  0477  07F1               	addwf	(___aldiv@counter),f
+  2354                           	
+  2355  0478                     l30000784:	
+  2356                           	line	21
+  2357  0478  1FA7               	btfss	(___aldiv@divisor+3),(31)&7
+  2358  0479  2C7B               	goto	u1281
+  2359  047A  2C7C               	goto	u1280
+  2360  047B                     u1281:
+  2361  047B  2C6B               	goto	l30000783
+  2362  047C                     u1280:
+  2363                           	
+  2364  047C                     l30000785:	
+  2365                           	line	26
+  2366  047C  3001               	movlw	01h
+  2367  047D  00F0               	movwf	(??___aldiv+0+0)
+  2368  047E                     u1295:
+  2369  047E  1003               	clrc
+  2370  047F  0DF3               	rlf	(___aldiv@quotient),f
+  2371  0480  0DF4               	rlf	(___aldiv@quotient+1),f
+  2372  0481  0DF5               	rlf	(___aldiv@quotient+2),f
+  2373  0482  0DF6               	rlf	(___aldiv@quotient+3),f
+  2374  0483  0BF0               	decfsz	(??___aldiv+0+0)
+  2375  0484  2C7E               	goto	u1295
+  2376                           	
+  2377  0485                     l30000786:	
+  2378                           	line	27
+  2379  0485  0827               	movf	(___aldiv@divisor+3),w
+  2380  0486  0223               	subwf	(___aldiv@dividend+3),w
+  2381  0487  1D03               	skipz
+  2382  0488  2C93               	goto	u1305
+  2383  0489  0826               	movf	(___aldiv@divisor+2),w
+  2384  048A  0222               	subwf	(___aldiv@dividend+2),w
+  2385  048B  1D03               	skipz
+  2386  048C  2C93               	goto	u1305
+  2387  048D  0825               	movf	(___aldiv@divisor+1),w
+  2388  048E  0221               	subwf	(___aldiv@dividend+1),w
+  2389  048F  1D03               	skipz
+  2390  0490  2C93               	goto	u1305
+  2391  0491  0824               	movf	(___aldiv@divisor),w
+  2392  0492  0220               	subwf	(___aldiv@dividend),w
+  2393  0493                     u1305:
+  2394  0493  1C03               	skipc
+  2395  0494  2C96               	goto	u1301
+  2396  0495  2C97               	goto	u1300
+  2397  0496                     u1301:
+  2398  0496  2CA6               	goto	l30000789
+  2399  0497                     u1300:
+  2400                           	
+  2401  0497                     l30000787:	
+  2402                           	line	28
+  2403  0497  0824               	movf	(___aldiv@divisor),w
+  2404  0498  02A0               	subwf	(___aldiv@dividend),f
+  2405  0499  0825               	movf	(___aldiv@divisor+1),w
+  2406  049A  1C03               	skipc
+  2407  049B  0F25               	incfsz	(___aldiv@divisor+1),w
+  2408  049C  02A1               	subwf	(___aldiv@dividend+1),f
+  2409  049D  0826               	movf	(___aldiv@divisor+2),w
+  2410  049E  1C03               	skipc
+  2411  049F  0F26               	incfsz	(___aldiv@divisor+2),w
+  2412  04A0  02A2               	subwf	(___aldiv@dividend+2),f
+  2413  04A1  0827               	movf	(___aldiv@divisor+3),w
+  2414  04A2  1C03               	skipc
+  2415  04A3  0F27               	incfsz	(___aldiv@divisor+3),w
+  2416  04A4  02A3               	subwf	(___aldiv@dividend+3),f
+  2417                           	
+  2418  04A5                     l30000788:	
+  2419                           	line	29
+  2420  04A5  1473               	bsf	(___aldiv@quotient)+(0/8),(0)&7
+  2421                           	
+  2422  04A6                     l30000789:	
+  2423                           	line	31
+  2424  04A6  3001               	movlw	01h
+  2425  04A7                     u1315:
+  2426  04A7  1003               	clrc
+  2427  04A8  0CA7               	rrf	(___aldiv@divisor+3),f
+  2428  04A9  0CA6               	rrf	(___aldiv@divisor+2),f
+  2429  04AA  0CA5               	rrf	(___aldiv@divisor+1),f
+  2430  04AB  0CA4               	rrf	(___aldiv@divisor),f
+  2431  04AC  3EFF               	addlw	-1
+  2432  04AD  1D03               	skipz
+  2433  04AE  2CA7               	goto	u1315
+  2434                           
+  2435                           	
+  2436  04AF                     l30000790:	
+  2437                           	line	32
+  2438  04AF  3001               	movlw	low(01h)
+  2439  04B0  02F1               	subwf	(___aldiv@counter),f
+  2440  04B1  1D03               	btfss	status,2
+  2441  04B2  2CB4               	goto	u1321
+  2442  04B3  2CB5               	goto	u1320
+  2443  04B4                     u1321:
+  2444  04B4  2C7C               	goto	l30000785
+  2445  04B5                     u1320:
+  2446                           	
+  2447  04B5                     l30000791:	
+  2448                           	line	34
+  2449  04B5  0872               	movf	(___aldiv@sign),w
+  2450  04B6  1D03               	skipz
+  2451  04B7  2CB9               	goto	u1330
+  2452  04B8  2CC4               	goto	l30000793
+  2453  04B9                     u1330:
+  2454                           	
+  2455  04B9                     l30000792:	
+  2456                           	line	35
+  2457  04B9  09F3               	comf	(___aldiv@quotient),f
+  2458  04BA  09F4               	comf	(___aldiv@quotient+1),f
+  2459  04BB  09F5               	comf	(___aldiv@quotient+2),f
+  2460  04BC  09F6               	comf	(___aldiv@quotient+3),f
+  2461  04BD  0AF3               	incf	(___aldiv@quotient),f
+  2462  04BE  1903               	skipnz
+  2463  04BF  0AF4               	incf	(___aldiv@quotient+1),f
+  2464  04C0  1903               	skipnz
+  2465  04C1  0AF5               	incf	(___aldiv@quotient+2),f
+  2466  04C2  1903               	skipnz
+  2467  04C3  0AF6               	incf	(___aldiv@quotient+3),f
+  2468                           	
+  2469  04C4                     l30000793:	
+  2470                           	line	36
+  2471  04C4  0876               	movf	(___aldiv@quotient+3),w
+  2472  04C5  00A3               	movwf	(?___aldiv+3)
+  2473  04C6  0875               	movf	(___aldiv@quotient+2),w
+  2474  04C7  00A2               	movwf	(?___aldiv+2)
+  2475  04C8  0874               	movf	(___aldiv@quotient+1),w
+  2476  04C9  00A1               	movwf	(?___aldiv+1)
+  2477  04CA  0873               	movf	(___aldiv@quotient),w
+  2478  04CB  00A0               	movwf	(?___aldiv)
+  2479                           
+  2480                           	
+  2481  04CC                     l335:	
+  2482  04CC  0008               	return
+  2483                           	opt stack 0
+  2484                           GLOBAL	__end_of___aldiv
+  2485  04CD                     	__end_of___aldiv:
+  2486                           ; =============== function ___aldiv ends ============
+  2487                           
+  2488                           psect	text46,local,class=CODE,delta=2
+  2489                           global __ptext46
+  2490  0003                     __ptext46:
+
+
+HI-TECH Software PICC Macro Assembler V9.70 build 5239 
+Symbol Table                                                                                   Thu May 21 15:56:57 2015
+
+        ___aldiv@sign 0072                    _DA 04A5                    _BF 04A0                    _DC 0019  
+                  l52 042A                    l61 041E                    l53 0420                    l38 05C0  
+                  _PD 001B                    _RD 0C60                    _UA 04A1                    _TO 001C  
+                  u90 0426                    u91 0425                    _RW 04A2                    _WR 0C61  
+         __pbssCOMMON 0079                   l335 04CC                   _CM0 04E0                   _CM1 04E1  
+                 _CM2 04E2                   _CKE 04A6                   _IBF 044F                   _CIS 04E3  
+                 _CKP 00A4                   _GIE 005F                   _BOR 0470                   _RA0 0028  
+                 _RA1 0029                   _RB0 0030                   _RA2 002A                   _RB1 0031  
+                 _RA3 002B                   _RC0 0038                   _RB2 0032                   _RA4 002C  
+                 _RC1 0039                   _RB3 0033                   _RA5 002D                   _RD0 0040  
+                 _RC2 003A                   _RB4 0034                   _RD1 0041                   _RC3 003B  
+                 _RB5 0035                   _RE0 0048                   _RD2 0042                   _RC4 003C  
+                 _RB6 0036                   _RE1 0049                   _RD3 0043                   _RC5 003D  
+                 _RB7 0037                   _RE2 004A                   _RD4 0044                   _RC6 003E  
+                 _RD5 0045                   _RC7 003F                   _OBF 044E                   _RD6 0046  
+                 _RD7 0047                   _FSR 0004                   _PCL 0002                   _PS0 0408  
+                 _PR2 0092                   _PS1 0409                   _PS2 040A                   _PEN 048A  
+                 _RP0 001D                   _IRP 001F                   _RP1 001E                   u900 04E5  
+                 _SEN 0488                   u910 04FA                   u911 04FB                   _PSA 040B  
+                 u920 051B                   u912 0500                   u913 0501                   u905 04E0  
+                 u930 053D                   u931 053C                   u940 0553                   u925 0516  
+                 u950 0568                   u951 0569                   u960 0589                   u952 056E  
+                 _POR 0471                   u953 056F                   u945 054E                   _RX9 00C6  
+                 u970 05AE                   u971 05AD                   u980 05DE                   u965 0584  
+                 u981 05DD                   u990 05FB                   _SMP 04A7                   u991 05FA  
+                 _TX9 04C6      __size_of___aldiv 00A2       ___aldiv@divisor 0024       ___aldiv@counter 0071  
+                _ADIE 0466                  _ADIF 0066                  _ADFM 04FF                  _ADGO 00FA  
+                _ADON 00F8              __ptext41 0003              __ptext42 041F              __ptext43 0414  
+            __ptext44 04CD              __ptext45 042B              __ptext46 0003                  _CHS0 00FB  
+                _CHS1 00FC                  _CHS2 00FD                  _EEIE 046C                  _EEIF 006C  
+                _GCEN 048F                  _CMIE 046E                  _CMIF 006E                  _BRGH 04C2  
+                _T0IE 005D                  u1000 0608                  _T0IF 005A                  _CREN 00C4  
+                u1001 0607                  _T0CS 040D                  u1010 0625                  _FERR 00C2  
+                u1011 0624                  u1100 06DA                  u1020 0632                  u1101 06D9  
+                u1021 0631                  u1110 06F7                  u1030 064F                  u1111 06F6  
+                u1031 064E                  u1200 07AC                  u1120 0704                  u1040 065C  
+                u1201 07AB                  u1121 0703                  u1041 065B                  u1210 07C9  
+                u1130 0721                  u1050 0679                  u1211 07C8                  u1131 0720  
+                u1051 0678                  u1300 0497                  u1220 07D6                  u1140 072E  
+                u1060 0686                  _IBOV 044D                  _CVR0 04E8                  u1301 0496  
+                u1221 07D5                  u1141 072D                  u1061 0685                  _CVR1 04E9  
+                u1230 07F3                  u1150 074B                  u1070 06A3                  _CVR2 04EA  
+                u1231 07F2                  u1151 074A                  u1071 06A2                  _CVR3 04EB  
+                u1320 04B5                  u1240 0436                  u1160 0758                  u1080 06B0  
+                u1321 04B4                  u1305 0493                  u1241 0435                  u1161 0757  
+                u1081 06AF                  u1330 04B9                  u1250 0448                  u1170 0775  
+                u1090 06CD                  u1315 04A7                  u1251 0447                  u1171 0774  
+                u1091 06CC                  _T0SE 040C                  _CSRC 04C7                  u1260 0467  
+                u1180 0782                  u1261 0466                  u1181 0781                  u1190 079F  
+                _INDF 0000                  u1191 079E                  u1280 047C                  u1281 047B  
+                u1275 046D                  u1295 047E                  _PIE1 008C                  _PIE2 008D  
+                _CVRR 04ED                  _PEIE 005E                  _INTE 005C                  _INTF 0059  
+                _RBIE 005B                  _RBIF 0058                  _RCIE 0465                  _RCEN 048B  
+                _RCIF 0065                  _PCON 008E                  _PIR1 000C                  _PIR2 000D  
+                _OERR 00C1                  _RBPU 040F                  _RX9D 00C0                  _TMR0 0001  
+                _TMR2 0011                  _WCOL 00A7                  _SPEN 00C7                  _RSEN 0489  
+                _TX9D 04C0                  _SREN 00C5                  _TRMT 04C1                  _STOP 04A4  
+                _TXIE 0464                  _ZERO 001A                  _WREN 0C62                  _TXEN 04C5  
+                _TXIF 0064                  _SYNC 04C4                  _main 05C1      ___aldiv@dividend 0020  
+          _UART_Write 041F                  start 0000    __end_of_UART_Write 042B            UART_Init@x 0077  
+ start_initialization 040F           ?_UART_Write 0071       __end_of___aldiv 04CD               _CCP1CON 0017  
+             _CCP2CON 001D               _ACKSTAT 048E                 _C1INV 04E4                 _C2INV 04E5  
+               _C1OUT 04E6                 _C2OUT 04E7                 _ADCS0 00FE                 _ADCS1 00FF  
+               _ADCS2 04FE                 _ADDEN 00C3                 ?_main 0038                 _ACKEN 048C  
+               _ACKDT 048D                 _BCLIE 046B                 _BCLIF 006B                 _CCP1X 00BD  
+               _CCP1Y 00BC                 _CCP2X 00ED                 _CCP2Y 00EC                 _EEADR 010D  
+               _CARRY 0018                 _EEPGD 0C67                 _CMCON 009C                 _T1CON 0010  
+               _T2CON 0012               _T1CKPS0 0084               _T1CKPS1 0085                 _PCFG0 04F8  
+               _PCFG1 04F9                 _PCFG2 04FA                 _PCFG3 04FB               _T2CKPS0 0090  
+             _T2CKPS1 0091                 _CVREN 04EF                 _CVROE 04EE                 _RCREG 001A  
+               _RCSTA 0018                 _TMR1H 000F                 _TMR1L 000E                 _SPBRG 0099  
+               _PORTA 0005                 _PORTB 0006               _T1OSCEN 0083                 _PORTC 0007  
+               _PORTD 0008                 _PORTE 0009                 _PSPIE 0467                 _PSPIF 0067  
+               _START 04A3                 _SSPM0 00A0                 _SSPM1 00A1                 _SSPM2 00A2  
+               _SSPM3 00A3                 _TRISA 0085                 _TRISB 0086                 _TRISC 0087  
+               _TRISD 0088                 _SSPIE 0463                 _TRISE 0089                 _SSPIF 0063  
+               _SSPEN 00A5                 _SSPOV 00A6                 _WRERR 0C63                 _TXREG 0019  
+    ___aldiv@quotient 0073                 _TXSTA 0098      _delayus_variable 0079        __pcstackCOMMON 0070  
+             _PSPMODE 044C          ??_UART_Write 0070               _SSPCON2 0091        UART_Write@data 0070  
+             _SSPSTAT 0094               _TOUTPS0 0093               _TOUTPS1 0094               _TOUTPS2 0095  
+             _TOUTPS3 0096                 status 0003         __size_of_main 023F              l30000405 0420  
+            l30000406 0426              l30000407 0414              l30000700 0649              l30000701 064F  
+            l30000710 0682              l30000702 0654              l30000711 0686              l30000703 0658  
+            l30000720 06C1              l30000712 0693              l30000704 065C              l30000721 06C7  
+            l30000713 0697              l30000705 0669              l30000730 06FC              l30000722 06CD  
+            l30000714 069D              l30000706 066D              l30000731 0700              l30000723 06D2  
+            l30000715 06A3              l30000707 0673              l30000740 073B              l30000732 0704  
+            l30000724 06D6              l30000716 06A8              l30000708 0679              l30000741 073F  
+            l30000733 0711              l30000725 06DA              l30000717 06AC              l30000709 067E  
+            l30000670 05B3              l30000750 0775              l30000742 0745              l30000734 0715  
+            l30000726 06E7              l30000718 06B0              l30000671 05B6              l30000663 04CD  
+            l30000751 077A              l30000743 074B              l30000735 071B              l30000727 06EB  
+            l30000719 06BD              l30000672 05B9              l30000664 0534              l30000760 07AC  
+            l30000752 077E              l30000744 0750              l30000736 0721              l30000728 06F1  
+            l30000680 05D6              l30000673 05BA              l30000665 053D              l30000761 07B9  
+            l30000753 0782              l30000745 0754              l30000737 0726              l30000729 06F7  
+            l30000681 05D8              l30000674 05BD              l30000666 05A2              l30000770 07ED  
+            l30000762 07BD              l30000754 078F              l30000746 0758              l30000738 072A  
+            l30000690 0608              l30000682 05DA              l30000667 05A5              l30000771 07F3  
+            l30000763 07C3              l30000755 0793              l30000747 0765              l30000739 072E  
+            l30000691 0615              l30000683 05DE              l30000780 0457              l30000668 05AE  
+            l30000772 07F8              l30000764 07C9              l30000756 0799              l30000748 0769  
+            l30000692 0619              l30000684 05EB              l30000676 05C1              l30000781 045F  
+            l30000773 042B              l30000669 05B2              l30000765 07CE              l30000757 079F  
+            l30000749 076F              l30000693 061F              l30000685 05EF              l30000677 05C7  
+            l30000790 04AF              l30000782 0467              l30000774 0430              l30000766 07D2  
+            l30000758 07A4              l30000694 0625              l30000686 05F5              l30000678 05CE  
+            l30000783 046B              l30000791 04B5              l30000775 0436              l30000767 07D6  
+            l30000759 07A8              l30000695 062A              l30000687 05FB              l30000679 05D2  
+            l30000792 04B9              l30000784 0478              l30000776 0441              l30000768 07E3  
+            l30000696 062E              l30000688 0600              l30000793 04C4              l30000785 047C  
+            l30000777 0444              l30000769 07E7              l30000697 0632              l30000689 0604  
+            l30000786 0485              l30000778 0448              l30000698 063F              l30000787 0497  
+            l30000779 0453              l30000699 0643              l30000788 04A5              l30000789 04A6  
+             ___aldiv 042B              ?___aldiv 0020             ??___aldiv 0070                ??_main 0071  
+           _UART_Init 04CD            __pmaintext 05C1     __end_of_UART_Init 05C1             _UART_Stop 0414  
+   __end_of_UART_Stop 041F            ?_UART_Init 0034            ?_UART_Stop 0070                _ADCON0 001F  
+              _ADCON1 009F                _CCP1M0 00B8                _CCP1M1 00B9                _CCP1M2 00BA  
+              _CCP1M3 00BB                _CCP2M0 00E8                _CCP2M1 00E9                _CCP2M2 00EA  
+              _CCP2M3 00EB                _CCP1IE 0462                _CCP1IF 0062                _CCP2IE 0468  
+              _CCP2IF 0068                _ADRESH 001E                _EEADRH 010F                _ADRESL 009E  
+              _EEADRL 010D                _EEDATA 010C                _CCPR1H 0016                _EEDATH 010E  
+              _CCPR2H 001C                _CCPR1L 0015                _CCPR2L 001B                _EECON1 018C  
+              _EECON2 018D          __end_of_main 0800                _GODONE 00FA  end_of_initialization 0410  
+              _CVRCON 009D                _T1SYNC 0082                _INTEDG 040E                _PCLATH 000A  
+              _INTCON 000B         __pcstackBANK0 0020           ??_UART_Init 0028                _TMR0IE 005D  
+              _TMR0IF 005A                _TMR1IE 0460                _TMR1IF 0060                _TMR1CS 0081  
+              _TMR2IE 0461                _TMR2IF 0061                _OPTION 0081                _TMR1ON 0080  
+              _TMR2ON 0092           ??_UART_Stop 0070                _SSPADD 0093                _TRISA0 0428  
+              _TRISA1 0429                _TRISB0 0430                _TRISA2 042A                _TRISB1 0431  
+              _TRISA3 042B                _TRISC0 0438                _TRISB2 0432                _TRISA4 042C  
+              _TRISC1 0439                _TRISB3 0433                _TRISA5 042D                _TRISD0 0440  
+              _TRISC2 043A                _TRISB4 0434                _TRISD1 0441                _TRISC3 043B  
+              _TRISB5 0435                _TRISE0 0448                _TRISD2 0442                _TRISC4 043C  
+              _TRISB6 0436                _TRISE1 0449                _TRISD3 0443                _TRISC5 043D  
+              _TRISB7 0437                _TRISE2 044A                _TRISD4 0444                _TRISC6 043E  
+              _TRISD5 0445                _TRISC7 043F                _TRISD6 0446                _TRISD7 0447  
+              _STATUS 0003                _SSPCON 0014                _SSPBUF 0013   __size_of_UART_Write 000C  
+  __size_of_UART_Init 00F4    __size_of_UART_Stop 000B     UART_Init@baudrate 0034  

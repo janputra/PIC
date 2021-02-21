@@ -1,0 +1,18 @@
+_ad_setup: CODE, 726 0 7
+___aldiv: CODE, 1419 0 162
+_UART_Read: CODE, 733 0 8
+_UART_Data_Ready: CODE, 720 0 6
+_UART_Init: CODE, 1804 0 244
+_main: CODE, 1581 0 223
+_atoi: CODE, 1280 0 139
+_UART_Write_Text: CODE, 776 0 31
+___lwdiv: CODE, 991 0 75
+_ad_setgetchannel: CODE, 1066 0 84
+_isdigit: CODE, 753 0 23
+___lwmod: CODE, 930 0 61
+_read_ad: CODE, 807 0 40
+_itoa: CODE, 888 0 42
+_UART_Write: CODE, 741 0 12
+___wmul: CODE, 847 0 41
+_utoa: CODE, 1150 0 130
+Total: 1328
